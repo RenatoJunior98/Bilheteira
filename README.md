@@ -1,2 +1,2 @@
 # Bilheteira
-*Projeto
+Projeto
