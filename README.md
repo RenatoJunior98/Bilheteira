@@ -23,4 +23,4 @@ Cada evento tem uma descrição, vídeos de versões anteriores do evento, morad
 A sua base de dados e o próprio site têm que ser rápidos, seguros, eficazes e principalmente bem estruturados pois este é visitado por meio milhão a 1 milhão de pessoas mensalmente.
 
 ## Referências:
-QUEM SOMOS. Acedido em: 2, 10, 2019, em:https://ticketline.sapo.pt/pagina/quemsomos.
+QUEM SOMOS. Acedido em: 2, 10, 2019, em: https://ticketline.sapo.pt/pagina/quemsomos.
