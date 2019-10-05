@@ -11,14 +11,16 @@ Este projeto enquadra-se na área de venda de bilhetes para eventos de um estád
 A venda de bilhetes é a principal fonte de rendimento de um clube ou de um artista / artistas responsáveis pelo evento. É importante ter um sistema fluido, eficaz e fácil de navegar, principalmente onde há milhares de clientes a aceder simultaneamente. Assim é fundamental ter uma base de dados rápida, organizada e eficaz.
 
 ## Cenário principal:
-Compra de bilhetes: É escolhida a zona para a qual é desejado reservar um bilhete (a partir deste momento um lugar, dentro da zona escolhida fica indisponivel, diminuindo o numero de lugares disponiveis) para o qual é gerado o numero da porta mais perto.
+Compra de bilhetes: É escolhida a zona para a qual é desejado reservar um bilhete (a partir deste momento um lugar, dentro da zona escolhida fica indisponível, diminuindo o numero de lugares disponíveis) para o qual é gerado o numero da porta mais perto.
 
 Os bilhetes são vendidos por zona logo não há lugares marcados no estádio.
 
-## Cenários secundários:
 Preços variados consoante as várias zonas e descontos para jovens e sócios.
 
-Criação de eventos no estádio.
+## Cenários secundários:
+Troca de zona: Após a compra do seu bilhete, o utilizador ao escolher a opção de trocar de zona é lhe pedido o código gerado no ato da compra e é redirecionado para a escolha de zonas tendo que pagar ou receber o valor da diferença.
+
+Criação de eventos no estádio: Escolher a opção criar evento, alterar as zonas diponíveis ou acrescentar zonas ( lugares em pé ) e indicar o número de lugares da zona acrescentada. Submeter nome, data, hora e preço para os vários tipos de zona.
 
 ## Enquadramento do projeto:
 Ticketline foi fundada em 1999 e é a maior e mais conceituada empresa nacional especializada em vendas de bilhetes para qualquer tipo de eventos.
