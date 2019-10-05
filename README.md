@@ -6,11 +6,13 @@ A venda de bilhetes é a principal fonte de rendimento de um clube ou de um arti
 
 ## Cenário principal:
 Base de dados com número de bilhetes por cada zona e gerar o bilhete com o número da porta. Após a compra, o lugar ficará indisponível para outros clientes (numero de bilhetes da zona ficará reduzido).
+
 Os bilhetes são vendidos por zona logo não há lugares marcados no estádio.
 
 ## Cenários secundários:
 Preços variados consoante as várias zonas e descontos para jovens e sócios.
-<h1> Criação de eventos no estádio.
+
+Criação de eventos no estádio.
 
 ## Enquadramento do projeto:
 Ticketline foi fundada em 1999 e é a maior e mais conceituada empresa nacional especializada em vendas de bilhetes para qualquer tipo de eventos.
