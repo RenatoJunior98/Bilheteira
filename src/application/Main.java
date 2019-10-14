@@ -1,17 +1,24 @@
 package application;
 	
+import java.io.IOException;
+
 import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
+	
 	@Override
 	public void start(Stage primaryStage) {
+		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("18216.png")));
+		primaryStage.setTitle("Bilheteira");
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
+			Pane root = FXMLLoader.load(getClass().getResource("view/MainStage.fxml"));
+			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
@@ -22,5 +29,16 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public static void createNewWindow (String fxmlLocation) throws IOException {
+		Stage stage =  new Stage();
+		stage.getIcons().add(new Image(Main.class.getResourceAsStream("18216.png")));
+		stage.setTitle("Bilheteira");
+		Pane root = FXMLLoader.load(Main.class.getResource(fxmlLocation));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+		
 	}
 }
