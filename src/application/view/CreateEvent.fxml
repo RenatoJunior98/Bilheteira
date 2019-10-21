@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -53,8 +53,9 @@
                   <Image url="@../../../../../estadio1.png" />
                </image>
             </ImageView>
-            <Text layoutX="62.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHER ZONAS INDISPONÍVEIS PARA O EVENTO" wrappingWidth="290.267578125" />
-            <JFXCheckBox checkedColor="#3c3c3c" layoutX="97.0" layoutY="349.0" prefHeight="12.0" prefWidth="14.0" text="A" textFill="WHITE" unCheckedColor="WHITE" />
+            <Text layoutX="75.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHER ZONAS INDISPONÍVEIS PARA O EVENTO" wrappingWidth="290.267578125" />
+            <Label layoutX="275.0" layoutY="106.0" prefHeight="17.0" prefWidth="100.0" text="TIPO DE EVENTO:" />
+            <ChoiceBox layoutX="374.0" layoutY="102.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </center>
