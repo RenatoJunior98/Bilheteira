@@ -1,8 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTimePicker defaultColor="#00c9b5" layoutX="63.0" layoutY="147.0" prefHeight="21.0" prefWidth="99.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></JFXTimePicker>
+            <JFXDatePicker defaultColor="#00c9b5" layoutX="62.0" layoutY="102.0" prefHeight="25.0" prefWidth="98.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></JFXDatePicker>
+            <Text layoutX="233.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRIAÇÃO DE EVENTOS">
+               <font>
+                  <Font name="Candara Light" size="30.0" />
+               </font>
+            </Text>
+            <Label layoutX="14.0" layoutY="151.0" prefHeight="17.0" prefWidth="48.0" text="HORA:" />
+            <Label layoutX="14.0" layoutY="106.0" prefHeight="17.0" prefWidth="48.0" text="DATA:" />
+            <Label layoutX="14.0" layoutY="53.0" prefHeight="17.0" prefWidth="110.0" text="NOME DO EVENTO:" />
+            <JFXTextField layoutX="124.0" layoutY="49.0" prefHeight="25.0" prefWidth="601.0" unFocusColor="BLACK">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></JFXTextField>
+            <Label layoutX="14.0" layoutY="197.0" prefHeight="17.0" prefWidth="72.0" text="PREÇO BASE:" />
+            <JFXTextField focusColor="#d01e18" layoutX="97.0" layoutY="193.0" prefHeight="25.0" prefWidth="32.0" unFocusColor="BLACK">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </JFXTextField>
+            <Text layoutX="140.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="€">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="368.0" fitWidth="624.0" layoutX="-92.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../estadio1.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="62.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHER ZONAS INDISPONÍVEIS PARA O EVENTO" wrappingWidth="290.267578125" />
+            <JFXCheckBox checkedColor="#3c3c3c" layoutX="97.0" layoutY="349.0" prefHeight="12.0" prefWidth="14.0" text="A" textFill="WHITE" unCheckedColor="WHITE" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

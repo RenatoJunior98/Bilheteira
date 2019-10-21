@@ -3,8 +3,16 @@ package application.view;
 import java.io.IOException;
 
 import application.Main;
-
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 public class MainStageController {
+
+	@FXML
+	PasswordField password;
+	@FXML
+	Button btnpassword;
+	
 	public void onCompraBilhete () {
 		try {
 			Main.createNewWindow("view/BuyTicketWindow.fxml");
@@ -16,7 +24,7 @@ public class MainStageController {
 	
 	public void onCreateEvent () {
 		try {
-			Main.createNewWindow("view/CreateEvent.fxml");
+			Main.createNewWindow("view/PasswordEvent.fxml");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -26,6 +34,15 @@ public class MainStageController {
 	public void onRefound () {
 		try {
 			Main.createNewWindow("view/Refound.fxml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void onTicket () {
+		try {
+			Main.createNewWindow("view/ViewTicket.fxml");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

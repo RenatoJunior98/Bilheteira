@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
+	
+	private static Stage currentStage;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("18216.png")));
@@ -20,6 +23,7 @@ public class Main extends Application {
 			Pane root = FXMLLoader.load(getClass().getResource("view/MainStage.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			currentStage =primaryStage;
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -37,8 +41,15 @@ public class Main extends Application {
 		stage.setTitle("Bilheteira");
 		Pane root = FXMLLoader.load(Main.class.getResource(fxmlLocation));
 		Scene scene = new Scene(root);
+		currentStage = stage;
 		stage.setScene(scene);
 		stage.show();
 		
 	}
+	
+	public static Stage getCurrentStage() {
+		return currentStage;
+	}
+	
+	
 }
