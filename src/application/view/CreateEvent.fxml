@@ -4,7 +4,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.CreateEventController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -55,7 +55,7 @@
             </ImageView>
             <Text layoutX="75.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHER ZONAS INDISPONÍVEIS PARA O EVENTO" wrappingWidth="290.267578125" />
             <Label layoutX="275.0" layoutY="106.0" prefHeight="17.0" prefWidth="100.0" text="TIPO DE EVENTO:" />
-            <ChoiceBox layoutX="374.0" layoutY="102.0" prefWidth="150.0" />
+            <ComboBox fx:id="categoryBox" layoutX="382.0" layoutY="102.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </center>

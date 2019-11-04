@@ -25,7 +25,10 @@
          <children>
             <Button layoutX="297.0" layoutY="63.0" mnemonicParsing="false" onAction="#onCompraBilhete" prefHeight="61.0" prefWidth="154.0" text="COMPRA DE BILHETES" />
             <Button layoutX="297.0" layoutY="212.0" mnemonicParsing="false" onAction="#onCreateEvent" prefHeight="62.0" prefWidth="154.0" text="CRIAÇÃO DE EVENTOS" />
-            <Button layoutX="298.0" layoutY="364.0" mnemonicParsing="false" onAction="#onRefound" prefHeight="62.0" prefWidth="153.0" text="TROCA DE BILHETES" />
+            <Button layoutX="298.0" layoutY="364.0" mnemonicParsing="false" onAction="#onRefound" prefHeight="62.0" prefWidth="153.0" text="DEVOLUÇÃO DE BILHETES">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../logoEstadio.png" />
