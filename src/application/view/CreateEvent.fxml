@@ -6,6 +6,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -56,6 +57,8 @@
             <Text layoutX="75.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHER ZONAS INDISPONÍVEIS PARA O EVENTO" wrappingWidth="290.267578125" />
             <Label layoutX="275.0" layoutY="106.0" prefHeight="17.0" prefWidth="100.0" text="TIPO DE EVENTO:" />
             <ComboBox fx:id="categoryBox" layoutX="382.0" layoutY="102.0" prefWidth="150.0" />
+            <Label layoutX="435.0" layoutY="265.0" prefHeight="17.0" prefWidth="206.0" text="NÚMERO DE LUGARES DISPONÍVEIS:" />
+            <TextField layoutX="458.0" layoutY="292.0" />
          </children>
       </AnchorPane>
    </center>
