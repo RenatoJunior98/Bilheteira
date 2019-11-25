@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -59,6 +60,11 @@
             <ComboBox fx:id="categoryBox" layoutX="382.0" layoutY="102.0" prefWidth="150.0" />
             <Label layoutX="435.0" layoutY="265.0" prefHeight="17.0" prefWidth="206.0" text="NÚMERO DE LUGARES DISPONÍVEIS:" />
             <TextField layoutX="458.0" layoutY="292.0" />
+            <Button layoutX="489.0" layoutY="419.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="98.0" text="SUBMETER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>
