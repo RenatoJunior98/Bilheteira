@@ -23,7 +23,7 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #394553;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="297.0" layoutY="63.0" mnemonicParsing="false" onAction="#onCompraBilhete" prefHeight="61.0" prefWidth="154.0" text="COMPRA DE BILHETES" />
+            <Button layoutX="297.0" layoutY="63.0" mnemonicParsing="false" onAction="#onViewEvents" prefHeight="61.0" prefWidth="154.0" text="COMPRA DE BILHETES" />
             <Button layoutX="297.0" layoutY="212.0" mnemonicParsing="false" onAction="#onCreateEvent" prefHeight="62.0" prefWidth="154.0" text="CRIAÇÃO DE EVENTOS" />
             <Button layoutX="298.0" layoutY="364.0" mnemonicParsing="false" onAction="#onRefound" prefHeight="62.0" prefWidth="153.0" text="DEVOLUÇÃO DE BILHETES">
                <font>

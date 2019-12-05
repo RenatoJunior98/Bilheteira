@@ -1,4 +1,4 @@
-package application.view;
+package bilheteira.controllers;
 
 import java.io.IOException;
 

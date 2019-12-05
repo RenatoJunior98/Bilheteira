@@ -1,4 +1,4 @@
-package application.view;
+package bilheteira.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
