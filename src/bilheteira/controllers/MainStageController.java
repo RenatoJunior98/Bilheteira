@@ -18,9 +18,9 @@ public class MainStageController {
 	Button btnpassword;
 	
 	
-	public void onCompraBilhete () {
+	public void onViewEvents () {
 		try {
-			Main.createNewWindow("view/BuyTicketWindow.fxml");
+			Main.createNewWindow("view/ViewEvents.fxml");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,4 +53,6 @@ public class MainStageController {
 			e.printStackTrace();
 		}
 	}
+
+	
 }

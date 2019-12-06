@@ -1,4 +1,4 @@
-package bilheteira.models.DAO;
+package bilheteira.controllers;
 
 import java.io.IOException;
 

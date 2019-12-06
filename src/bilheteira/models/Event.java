@@ -1,13 +1,13 @@
-package application.view;
+package bilheteira.models;
 
-	public class EventsList {
-		private int id;
+	public class Event {
+		private int eventoID;
 		private String nome;
 		private int precoBase;
 		private String dia;
 		private int lugaresDisponiveis;
-		public EventsList(int id,String nome,String dia,int precoBase,int lugaresDisponiveis) {
-			this.id = id;
+		public Event(int eventoID,String nome,String dia,int precoBase,int lugaresDisponiveis) {
+			this.eventoID = eventoID;
 			this.nome = nome;
 			this.dia = dia;
 			this.lugaresDisponiveis = lugaresDisponiveis;
@@ -30,8 +30,8 @@ package application.view;
 			return precoBase;
 		}
 		
-		public int getId() {
-			return id;
+		public int getEventoID() {
+			return eventoID;
 		}
 		
 		public int getLugatesDiponiveis() {

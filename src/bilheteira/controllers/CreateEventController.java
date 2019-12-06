@@ -9,8 +9,6 @@ public class CreateEventController {
 
 	private ObservableList<String> CategoryList = FXCollections
 			.observableArrayList ("Jogo de Desporto","Concerto","Espetáculo","Outro");
-	
-
 
 	@FXML
     private ComboBox<String> categoryBox;
