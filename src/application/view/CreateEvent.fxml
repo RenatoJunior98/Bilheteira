@@ -8,8 +8,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -19,11 +17,11 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTimePicker defaultColor="#00c9b5" layoutX="63.0" layoutY="147.0" prefHeight="21.0" prefWidth="99.0">
+            <JFXTimePicker fx:id="hora" defaultColor="#00c9b5" layoutX="63.0" layoutY="147.0" prefHeight="21.0" prefWidth="99.0">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></JFXTimePicker>
-            <JFXDatePicker defaultColor="#00c9b5" layoutX="62.0" layoutY="102.0" prefHeight="25.0" prefWidth="98.0">
+            <JFXDatePicker fx:id="dia" defaultColor="#00c9b5" layoutX="62.0" layoutY="102.0" prefHeight="25.0" prefWidth="98.0">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></JFXDatePicker>
@@ -35,12 +33,12 @@
             <Label layoutX="14.0" layoutY="151.0" prefHeight="17.0" prefWidth="48.0" text="HORA:" />
             <Label layoutX="14.0" layoutY="106.0" prefHeight="17.0" prefWidth="48.0" text="DATA:" />
             <Label layoutX="14.0" layoutY="53.0" prefHeight="17.0" prefWidth="110.0" text="NOME DO EVENTO:" />
-            <JFXTextField layoutX="124.0" layoutY="49.0" prefHeight="25.0" prefWidth="601.0" unFocusColor="BLACK">
+            <JFXTextField fx:id="nome" layoutX="124.0" layoutY="49.0" prefHeight="25.0" prefWidth="601.0" unFocusColor="BLACK">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></JFXTextField>
             <Label layoutX="14.0" layoutY="197.0" prefHeight="17.0" prefWidth="72.0" text="PREÇO BASE:" />
-            <JFXTextField focusColor="#d01e18" layoutX="97.0" layoutY="193.0" prefHeight="25.0" prefWidth="32.0" unFocusColor="BLACK">
+            <JFXTextField fx:id="precoBase" focusColor="#d01e18" layoutX="97.0" layoutY="193.0" prefHeight="25.0" prefWidth="32.0" unFocusColor="BLACK">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -50,17 +48,12 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <ImageView fitHeight="368.0" fitWidth="624.0" layoutX="-92.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../estadio1.png" />
-               </image>
-            </ImageView>
             <Text layoutX="75.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHER ZONAS INDISPONÍVEIS PARA O EVENTO" wrappingWidth="290.267578125" />
             <Label layoutX="275.0" layoutY="106.0" prefHeight="17.0" prefWidth="100.0" text="TIPO DE EVENTO:" />
             <ComboBox fx:id="categoryBox" layoutX="382.0" layoutY="102.0" prefWidth="150.0" />
             <Label layoutX="435.0" layoutY="265.0" prefHeight="17.0" prefWidth="206.0" text="NÚMERO DE LUGARES DISPONÍVEIS:" />
             <TextField layoutX="458.0" layoutY="292.0" />
-            <Button layoutX="489.0" layoutY="419.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="98.0" text="SUBMETER">
+            <Button layoutX="489.0" layoutY="419.0" mnemonicParsing="false" onAction="#inserir" prefHeight="52.0" prefWidth="98.0" text="SUBMETER">
                <font>
                   <Font size="15.0" />
                </font>

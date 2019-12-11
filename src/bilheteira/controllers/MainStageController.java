@@ -11,11 +11,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 
 public class MainStageController {
-
-	@FXML
-	PasswordField password;
-	@FXML
-	Button btnpassword;
 	
 	
 	public void onViewEvents () {
@@ -54,5 +49,13 @@ public class MainStageController {
 		}
 	}
 
+	public void onTicketTRY () {
+		try {
+			Main.createNewWindow("view/BuyTicketWindow.fxml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }

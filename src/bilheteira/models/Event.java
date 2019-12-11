@@ -3,14 +3,14 @@ package bilheteira.models;
 	public class Event {
 		private int eventoID;
 		private String nome;
-		private int precoBase;
+		private double precoBase;
 		private String dia;
-		private int lugaresDisponiveis;
-		public Event(int eventoID,String nome,String dia,int precoBase,int lugaresDisponiveis) {
+		//private int lugaresDisponiveis;
+		public Event(int eventoID,String nome,String dia,double precoBase) {
 			this.eventoID = eventoID;
 			this.nome = nome;
 			this.dia = dia;
-			this.lugaresDisponiveis = lugaresDisponiveis;
+			//this.lugaresDisponiveis = lugaresDisponiveis;
 			this.precoBase = precoBase;
 		}
 		public String getNome() {
@@ -20,13 +20,8 @@ package bilheteira.models;
 		public String toString() {
 			return  getNome();
 		}
-		
-		public String getDescription() {
-			return nome ;
-					
-			}
 	
-		public int getPrecoBase() {
+		public double getPrecoBase() {
 			return precoBase;
 		}
 		
@@ -34,15 +29,11 @@ package bilheteira.models;
 			return eventoID;
 		}
 		
-		public int getLugatesDiponiveis() {
-			return lugaresDisponiveis;
-			}
+		//public int getLugatesDiponiveis() {
+			//return lugaresDisponiveis;
+			//}
 		
 		public String getDia() {
 			return dia;
 		}
-		
-		//public static void add(EventsList eventsList) {}
-		
-		
 	}

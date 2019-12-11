@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 
 public final class DBConnector {
-	private static final String URL = "jdbc:mysql://remotemysql.com:3306/G9rCfBmbbN?useSSL=false";
-	private static final String USER = "G9rCfBmbbN";
-	private static final String PASS = "sg9cqw6noQ";
+	private static final String URL = "jdbc:mysql://remotemysql.com:3306/yZAkJiaHXd?useSSL=false";
+	private static final String USER = "yZAkJiaHXd";
+	private static final String PASS = "hE3SXhzEza";
 
 	private static Connection connector;
 	private DBConnector () {}

@@ -26,7 +26,7 @@ public class ViewEventsController {
     private TableColumn<Event, Double> precoBaseColumn;
     
     @FXML
-    private TableColumn<Event, Integer> lugaresDisponiveisColumn;
+   // private TableColumn<Event, Integer> lugaresDisponiveisColumn;
     
     private ObservableList<Event> eventos;
   
@@ -39,7 +39,14 @@ public class ViewEventsController {
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
         diaColumn.setCellValueFactory(new PropertyValueFactory<>("dia"));
         precoBaseColumn.setCellValueFactory(new PropertyValueFactory<>("precoBase"));
-        lugaresDisponiveisColumn.setCellValueFactory(new PropertyValueFactory<>("lugaresDisponiveis"));
-		
-	}
+       // lugaresDisponiveisColumn.setCellValueFactory(new PropertyValueFactory<>("lugaresDisponiveis"));
+	
+        eventosTV.setOnMouseClicked(
+        		(event)->{     
+        		Event selectedEvent = eventosTV.getSelectionModel().getSelectedItem();          
+        		
+        });
+	
+    
+    }
     }

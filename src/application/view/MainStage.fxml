@@ -34,6 +34,7 @@
                   <Image url="@../../../../../projetoBilheteira/logoEstadio.png" />
                </image>
             </ImageView>
+            <Button layoutX="621.0" layoutY="401.0" mnemonicParsing="false" onAction="#onTicketTRY" text="BuyTickets" />
          </children>
       </AnchorPane>
    </center>
