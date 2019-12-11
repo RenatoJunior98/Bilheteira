@@ -19,7 +19,9 @@ public class Bilhete {
 		this.precoBilhete = precoBilhete;
 		this.userID_bilhete = userID_bilhete;
 		this.eventoZonaID_bilhete = eventoZonaID_bilhete;
-	
+		
+		
+		
 	
 	
 	}
