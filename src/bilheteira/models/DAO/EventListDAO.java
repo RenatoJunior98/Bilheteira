@@ -43,7 +43,6 @@ public final class EventListDAO {
 	public static void saveEvento(String nome, double precoBase, String dia) {
 		int eventID = 0;
 		String sql = "Insert into evento (nome, precoBase, dia) values (?,?,?)";
-		//String BuscarID = "Select eventoID from evento where nome = ?";
 		Connection conn=DBConnector.getConnection();
 		try (java.sql.PreparedStatement stat=
 				conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){

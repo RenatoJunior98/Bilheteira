@@ -24,4 +24,15 @@ public class BuyTicketController {
 		escolherZona.setItems(EscolherZona);
 		nBilhetes.setItems(NBilhetes);
 	}
+
+	public Integer getZonaID () {
+		Integer selectedChoice = escolherZona.getSelectionModel().getSelectedItem();
+		return selectedChoice;
+	}
+	
+//	public Integer getNBilhetes () {
+//		Integer selectedChoice = nBilhetes.getSelectionModel().getSelectedItem();
+//		return selectedChoice;
+//	}
+	
 }
