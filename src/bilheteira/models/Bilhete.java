@@ -21,13 +21,6 @@ public class Bilhete {
 		this.eventoZonaID_bilhete = eventoZonaID_bilhete;
 		
 		
-		
-	
-	
 	}
-	
-	
-	
-	
 	
 }

@@ -1,5 +1,8 @@
 package bilheteira.controllers;
 
+import java.io.IOException;
+
+import application.Main;
 import bilheteira.models.Event;
 import bilheteira.models.DAO.EventListDAO;
 import javafx.collections.ObservableList;
@@ -40,13 +43,22 @@ public class ViewEventsController {
         diaColumn.setCellValueFactory(new PropertyValueFactory<>("dia"));
         precoBaseColumn.setCellValueFactory(new PropertyValueFactory<>("precoBase"));
        // lugaresDisponiveisColumn.setCellValueFactory(new PropertyValueFactory<>("lugaresDisponiveis"));
-	
+        
+
         eventosTV.setOnMouseClicked(
         		(event)->{     
         		Event selectedEvent = eventosTV.getSelectionModel().getSelectedItem();          
+        		eventosTV.getSelectionModel().clearSelection();
+        		if (selectedEvent != null) {
+        			System.out.println("entrei");
         		
-        });
-	
+        			try {
+						Main.createNewWindow("view/BuyTicketWindow.fxml");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+        		} });
     
     }
-    }
+}

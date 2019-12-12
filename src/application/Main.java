@@ -46,6 +46,7 @@ public class Main extends Application {
 		stage.show();
 		
 	}
+
 	
 	public static Stage getCurrentStage() {
 		return currentStage;
