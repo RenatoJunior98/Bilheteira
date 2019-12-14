@@ -9,13 +9,27 @@ import bilheteira.models.Event;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
+/**
+ * EventlistDAO é uma classe de ligação entre a base de dados e o java. 
+ * Contem a ObservableList nZonas que tem a lista de id´s das zonas
+ * 
+ * @author Renato Júnior
+ */
 public final class EventListDAO {
 	
 	private EventListDAO() {}
 	
 	static ObservableList<Integer> nZonas = FXCollections
 			.observableArrayList (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24);
+	
+	/**
+	 * Metodo getEventsList obtem a partir da base de dados a lista de eventos e
+	 * guarda na ObservableList EventsList; 
+	 * Faz a conexão à base de dados a partir do metodo getConnection da classe DBConnector
+	 * 
+	 * @return a ObservableList EventsList com a lista de eventos guardados na base
+	 *         de dados
+	 */
 	public static ObservableList<Event> getEventsLists() {
 		ObservableList<Event> EventsLists =
 				FXCollections.observableArrayList();
@@ -28,40 +42,57 @@ public final class EventListDAO {
 				String name= rs.getString("nome");
 				int eventoID = rs.getInt("eventoID");
 				double precoBase = rs.getInt("precoBase");
-				String dia =rs.getString ("dia");
-				//int lugaresDisponiveis = rs.getInt("lugaresDisponiveis");
-				EventsLists.add(new Event(eventoID,name,dia,precoBase));
+				String dataHora =rs.getString ("dia");
+				EventsLists.add(new Event(eventoID,name,dataHora,precoBase));
 
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
-
+		System.out.println(EventsLists.size());
 		return EventsLists;
 	}
 
-	public static void saveEvento(String nome, double precoBase, String dia) {
+	/**
+	 * Metodo saveEvento é dedicado a introduzir um novo evento na base de dados;
+	 * Recebe um evento para ser introduzido; 
+	 * Faz a conexão à base de dados a partir
+	 * do metodo getConnection da classe DBConnector
+	 * 
+	 * @param nome:      nome do evento
+	 * @param precoBase: Preço base do evento (preço da zona mais barata)
+	 * @param dataHora:       data e hora do evento
+	 */
+	public static void saveEvento(String nome, double precoBase, String dataHora) {
 		int eventID = 0;
 		String sql = "Insert into evento (nome, precoBase, dia) values (?,?,?)";
 		Connection conn=DBConnector.getConnection();
 		try (java.sql.PreparedStatement stat=
 				conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
-		//stat.setInt(0, eventoID);
 		stat.setString(1, nome);
 		stat.setDouble(2, precoBase);
-		stat.setString(3, dia);
+		stat.setString(3, dataHora);
 		stat.executeUpdate();
 		ResultSet rs = stat.getGeneratedKeys();
 		if (rs.next()){
 		    eventID=rs.getInt(1);
 		}
-		System.out.println(dia);
+		System.out.println(dataHora);
 		saveEventoZona (eventID);
 		} 
 		catch (SQLException e) { System.out.println("Fail"); 
 			e.printStackTrace();
 			} 	
 	}
+	
+	/**
+	 * Metodo saveEvento é dedicado a introduzir um novo evento na tabela EventoZona
+	 * na base de dados; 
+	 * Recebe um eventoID para criar elementos dessa tabela; 
+	 * Contem a ObservableList nZonas com as zonas do estadio criado, que é o outro
+	 * atributo necessario para ser inserido um novo elemento; 
+	 * Faz a conexão à base de dados a partir do metodo getConnection da classe DBConnector
+	 */
 	public static void saveEventoZona (int eventoID) {
 		String slqEZ = "insert into evento_zona (eventoID_ev_zon, zonaID_ev_zon) values (?,?)";
 		Connection conn=DBConnector.getConnection();

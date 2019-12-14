@@ -1,9 +1,17 @@
 package bilheteira.controllers;
+import bilheteira.models.Event;
+import bilheteira.models.DAO.BuyTicketDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 
+/**
+ * Classe que controla a função de comprar bilhete 
+ * Contem a ComboBox das categorias do evento, Date Picker , Time Picker, e é pedido um preço base do evento ( que postriormente será necessario para calcular o preço final do bilhete ) 
+ * @author Ricardo Cruz
+ *
+ */
 public class BuyTicketController {
 
 
@@ -19,20 +27,30 @@ public class BuyTicketController {
 	@FXML
     private ComboBox<Integer> nBilhetes;
 	
+	private Event event;
+	
+	public BuyTicketController(Event event) {
+		this.event = event;
+	}
+	
+	/**
+	 * Método initialize da classe BuyTicketController
+	 * Faz o preenchimento das ComboBoxs da quantidade de bilhetes e da escolha da zona
+	 */
 	@FXML
 	public void initialize () {
 		escolherZona.setItems(EscolherZona);
 		nBilhetes.setItems(NBilhetes);
-	}
-
-	public Integer getZonaID () {
-		Integer selectedChoice = escolherZona.getSelectionModel().getSelectedItem();
-		return selectedChoice;
+		
 	}
 	
-//	public Integer getNBilhetes () {
-//		Integer selectedChoice = nBilhetes.getSelectionModel().getSelectedItem();
-//		return selectedChoice;
-//	}
+	/**
+	 * Este método é chamado ao clicar no botão comprar bilhete, para os dados inseridos na compra do/dos bilhetes (ainda só é possível comprar um bilhete) serem guardados na base de dados
+	 * É chamado o método saveEvento da classe EventoListDAO para a Base de dados conseguir guardadar esses dados sobre a compra do/dos bilhetes
+	 */
+	@FXML
+	private void comprar() {
+		BuyTicketDAO.saveBilhete(event.getEventoID(), escolherZona.getValue());
+	}
 	
 }
