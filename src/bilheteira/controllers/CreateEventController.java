@@ -42,17 +42,17 @@ public class CreateEventController {
     private JFXTimePicker hora;
 	
 	@FXML
-    private JFXDatePicker dataHora;
+    private JFXDatePicker data;
 	
 /**
  * Este método é chamado ao clicar no botão da submissão do evento criado, para os dados inseridos na criação do evento serem guardados na base de dados
  * É chamado neste método, o método saveEvento da classe EventoListDAO para a Base de dados conseguir guardadar esses dados sobre o evento criado
  */
 	public void inserir () {
-		String data = dataHora.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd "))
+		String dataHora = data.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd "))
 				.concat(hora.getValue().format(DateTimeFormatter.ofPattern("hh:mm a")));
 
-		EventListDAO.saveEvento(nome.getText(), Double.valueOf(precoBase.getText()), data);
+		EventListDAO.saveEvento(nome.getText(), Double.valueOf(precoBase.getText()), dataHora);
 		
 	}
 
