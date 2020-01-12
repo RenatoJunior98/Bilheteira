@@ -7,7 +7,6 @@ import bilheteira.models.Event;
 import bilheteira.models.DAO.EventListDAO;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -34,6 +33,9 @@ public class ViewEventsController {
     @FXML
     private TableColumn<Event, Double> precoBaseColumn;
     
+    @FXML
+    private TableColumn<Event, Integer> lugaresDisponiveisColumn;
+    
     private static ObservableList<Event> eventos;
   
     private Event evento;
@@ -55,6 +57,7 @@ public class ViewEventsController {
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
         diaColumn.setCellValueFactory(new PropertyValueFactory<>("dataHora"));
         precoBaseColumn.setCellValueFactory(new PropertyValueFactory<>("precoBase"));
+        lugaresDisponiveisColumn.setCellValueFactory(new PropertyValueFactory<>("lugaresDisponiveis"));
 		eventosTV.setItems(EventListDAO.getEventsLists());
       
 		eventosTV.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal)-> {

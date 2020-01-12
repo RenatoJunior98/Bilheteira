@@ -17,7 +17,7 @@ import java.sql.SQLException;
  *
  */
 public class BuyTicketDAO {
-	public static void saveBilhete(int idEvento, int zonaID) {
+	public static void saveBilhete(int idEvento, int zonaID, int nBilhetes) {
 		String sql = "Insert into bilhete (entrada, eventoZonaID_bilhete) values (?,?)";
 		int eventoZonaID = 0;
 		Connection conn = DBConnector.getConnection();
@@ -34,6 +34,7 @@ public class BuyTicketDAO {
 			e.printStackTrace();
 		}
 
+		for (int i=0 ; i<nBilhetes ; i++) {
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setBoolean(1, false);
 			stat.setInt(2, eventoZonaID);
@@ -43,5 +44,9 @@ public class BuyTicketDAO {
 			e.printStackTrace();
 		}
 
+		}
 	}
+	/*public void getBilhetes() {
+		String sql = "select lugaresTotalZona - count(eventoZonaID_bilhete) as \"Lugares Disponiveis\" from ((bilhete inner join evento_zona ON bilhete.eventoZonaID_bilhete=evento_zona.zonaID_ev_zon) inner join zona ON zona.zonaID=evento_zona.zonaID_ev_zon ) where eventoZonaID_bilhete = ?"
+	}*/
 }

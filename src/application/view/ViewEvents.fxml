@@ -24,7 +24,7 @@
                 <TableColumn fx:id="nomeColumn" prefWidth="262.00001525878906" text="NOME" />
                   <TableColumn fx:id="diaColumn" prefWidth="280.0" text="DIA E HORA" />
                   <TableColumn fx:id="precoBaseColumn" prefWidth="127.0" text="PREÇO BASE" />
-                  <TableColumn prefWidth="166.0" text="LUGARES DISPONÍVEIS" />
+                  <TableColumn fx:id="lugaresDisponiveisColumn" prefWidth="166.0" text="LUGARES DISPONÍVEIS" />
               </columns>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />

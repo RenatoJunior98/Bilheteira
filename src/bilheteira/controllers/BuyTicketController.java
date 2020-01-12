@@ -1,4 +1,7 @@
 package bilheteira.controllers;
+import java.io.IOException;
+
+import application.Main;
 import bilheteira.models.Event;
 import bilheteira.models.DAO.BuyTicketDAO;
 import javafx.collections.FXCollections;
@@ -50,7 +53,15 @@ public class BuyTicketController {
 	 */
 	@FXML
 	private void comprar() {
-		BuyTicketDAO.saveBilhete(event.getEventoID(), escolherZona.getValue());
+		BuyTicketDAO.saveBilhete(event.getEventoID(), escolherZona.getValue(), nBilhetes.getValue());
+		
+		try {
+			Main.createNewWindow("view/ViewTicket.fxml", new ViewTicketController());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 	}
 	
 }

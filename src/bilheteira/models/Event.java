@@ -13,6 +13,7 @@ package bilheteira.models;
 		private String nome;
 		private double precoBase;
 		private String dataHora;
+		private int lugaresDisponiveis;
 		
 		/**
 		 * Construtor da classe Event que recebe estes parametros e 
@@ -22,11 +23,11 @@ package bilheteira.models;
 		 * @param dataHora:  data e hora do evento
 		 * @param precoBase: preço base do evento (preço da zona mais barata)
 		 */
-		public Event(int eventoID,String nome,String dataHora,double precoBase) {
+		public Event(int eventoID,String nome,String dataHora,double precoBase,int lugaresDisponiveis) {
 			this.eventoID = eventoID;
 			this.nome = nome;
 			this.dataHora = dataHora;
-			//this.lugaresDisponiveis = lugaresDisponiveis;
+			this.lugaresDisponiveis = lugaresDisponiveis;
 			this.precoBase = precoBase;
 		}
 		
@@ -75,5 +76,11 @@ package bilheteira.models;
 		public String getDataHora() {
 			return dataHora;
 		}
-	}
+		
+		
+		public int getlugaresDipsoniveis() {
+			return lugaresDisponiveis;
+		}
+
+		}
 

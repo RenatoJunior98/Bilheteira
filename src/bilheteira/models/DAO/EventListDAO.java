@@ -36,15 +36,23 @@ public final class EventListDAO {
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("Select * from evento"))
+						stat.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
+				ResultSet rs2 = 	
+						stat.executeQuery("select nome, eventoID, dia, precoBase, "
+								+ "(SUM(lugaresTotalZona) - count(codigoBilhete)) as 'lugares' from zona\r\n" + 
+								"left join evento_zona ON zonaID_ev_zon = zonaID\r\n" + 
+								"left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n" + 
+								"left join evento on eventoID_ev_zon = eventoID group by dia;"))
 		{
-			while (rs.next()) {
-				String name= rs.getString("nome");
-				int eventoID = rs.getInt("eventoID");
-				double precoBase = rs.getInt("precoBase");
-				String dataHora =rs.getString ("dia");
-				EventsLists.add(new Event(eventoID,name,dataHora,precoBase));
-
+			while (rs2.next()) {
+				String name= rs2.getString("nome");
+				int eventoID = rs2.getInt("eventoID");
+				double precoBase = rs2.getInt("precoBase");
+				String dataHora =rs2.getString ("dia");
+				int lugaresDisponiveis =rs2.getInt("lugares");
+				EventsLists.add(new Event(eventoID,name,dataHora,precoBase,lugaresDisponiveis));
+				System.out.println (name);
+				System.out.println (lugaresDisponiveis);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
