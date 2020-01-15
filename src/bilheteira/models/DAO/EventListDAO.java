@@ -36,13 +36,13 @@ public final class EventListDAO {
 		Connection conn =  DBConnector.getConnection();
 		try (Statement stat = conn.createStatement();
 				ResultSet rs = 
-						stat.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
+					stat.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
 				ResultSet rs2 = 	
-						stat.executeQuery("select nome, eventoID, dia, precoBase, "
-								+ "(SUM(lugaresTotalZona) - count(codigoBilhete)) as 'lugares' from zona\r\n" + 
-								"left join evento_zona ON zonaID_ev_zon = zonaID\r\n" + 
-								"left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n" + 
-								"left join evento on eventoID_ev_zon = eventoID group by dia;"))
+					stat.executeQuery("select nome, eventoID, dia, precoBase, "
+							+ "(SUM(lugaresTotalZona) - count(codigoBilhete)) as 'lugares' from zona\r\n" + 
+							"left join evento_zona ON zonaID_ev_zon = zonaID\r\n" + 
+							"left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n" + 
+							"left join evento on eventoID_ev_zon = eventoID group by dia;"))
 		{
 			while (rs2.next()) {
 				String name= rs2.getString("nome");

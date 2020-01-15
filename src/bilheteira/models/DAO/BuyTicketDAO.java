@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * BuyTicketDAO é uma classe de ligação entre a base de dados e o java; 
@@ -46,7 +50,49 @@ public class BuyTicketDAO {
 
 		}
 	}
-	/*public void getBilhetes() {
-		String sql = "select lugaresTotalZona - count(eventoZonaID_bilhete) as \"Lugares Disponiveis\" from ((bilhete inner join evento_zona ON bilhete.eventoZonaID_bilhete=evento_zona.zonaID_ev_zon) inner join zona ON zona.zonaID=evento_zona.zonaID_ev_zon ) where eventoZonaID_bilhete = ?"
-	}*/
+	
+	public static ObservableList<Integer> getZonasDisponiveis(int idEvento){
+		Connection conn = DBConnector.getConnection();
+		ObservableList<Integer> zonasDisponiveis = FXCollections.observableArrayList();
+		String sql = "SELECT zonaID_ev_zon from evento_zona WHERE eventoId_ev_zon = ?";
+		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+			stat.setInt(1,idEvento);
+			
+			try (ResultSet rs = stat.executeQuery()) {
+				while (rs.next()) {
+					zonasDisponiveis.add(rs.getInt("zonaID_ev_zon"));
+				}
+			}
+		}
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+			return zonasDisponiveis;
+	    
+	}
+
+	public static int getLugaresDisponiveis(int zonaID) {
+		Connection conn = DBConnector.getConnection();
+		String sql = "SELECT lugaresTotalZona - count(eventoZonaID_bilhete) AS \"Lugares Disponiveis\" "
+				+ "FROM ((bilhete inner join evento_zona ON bilhete.eventoZonaID_bilhete=evento_zona.zonaID_ev_zon)"
+				+ " inner join zona ON zona.zonaID=evento_zona.zonaID_ev_zon ) where zona.zonaID = ?";
+		
+		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+			stat.setInt(1,zonaID);
+			
+			try (ResultSet rs = stat.executeQuery()) {
+				if (rs.next()) {
+					int lugares = rs.getInt(1);
+					System.out.println("ZONA: "+zonaID + " LUGARES: "+lugares);
+					return lugares;	
+				}
+			}
+		}
+		catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+	return 0;
+	}
 }

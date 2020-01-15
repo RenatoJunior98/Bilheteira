@@ -14,6 +14,7 @@ package bilheteira.models;
 		private double precoBase;
 		private String dataHora;
 		private int lugaresDisponiveis;
+	
 		
 		/**
 		 * Construtor da classe Event que recebe estes parametros e 
@@ -29,6 +30,7 @@ package bilheteira.models;
 			this.dataHora = dataHora;
 			this.lugaresDisponiveis = lugaresDisponiveis;
 			this.precoBase = precoBase;
+			
 		}
 		
 		/**
@@ -78,7 +80,7 @@ package bilheteira.models;
 		}
 		
 		
-		public int getlugaresDipsoniveis() {
+		public int getLugaresDipsoniveis() {
 			return lugaresDisponiveis;
 		}
 

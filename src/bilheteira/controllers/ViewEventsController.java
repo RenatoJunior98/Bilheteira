@@ -1,15 +1,18 @@
 package bilheteira.controllers;
 
+
 import java.io.IOException;
 
 import application.Main;
 import bilheteira.models.Event;
 import bilheteira.models.DAO.EventListDAO;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 /**
  * Classe que controla a função escolher o evento 
@@ -37,7 +40,8 @@ public class ViewEventsController {
     private TableColumn<Event, Integer> lugaresDisponiveisColumn;
     
     private static ObservableList<Event> eventos;
-  
+    
+    
     private Event evento;
     
     public ViewEventsController() {
@@ -53,12 +57,18 @@ public class ViewEventsController {
     @FXML
 	public void initialize() {
 		System.out.println("CARREGADO");
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("eventoID"));
-        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        diaColumn.setCellValueFactory(new PropertyValueFactory<>("dataHora"));
-        precoBaseColumn.setCellValueFactory(new PropertyValueFactory<>("precoBase"));
-        lugaresDisponiveisColumn.setCellValueFactory(new PropertyValueFactory<>("lugaresDisponiveis"));
-		eventosTV.setItems(EventListDAO.getEventsLists());
+        idColumn.setCellValueFactory(cellData -> 
+        new ReadOnlyObjectWrapper<>(cellData.getValue().getEventoID()));
+        nomeColumn.setCellValueFactory(cellData -> 
+        new ReadOnlyObjectWrapper<>(cellData.getValue().getNome()));
+        diaColumn.setCellValueFactory(cellData -> 
+        new ReadOnlyObjectWrapper<>(cellData.getValue().getDataHora()));
+        precoBaseColumn.setCellValueFactory(cellData -> 
+        new ReadOnlyObjectWrapper<>(cellData.getValue().getPrecoBase()));
+        lugaresDisponiveisColumn.setCellValueFactory(cellData -> 
+        new ReadOnlyObjectWrapper<>(cellData.getValue().getLugaresDipsoniveis()));
+		
+        eventosTV.setItems(EventListDAO.getEventsLists());
       
 		eventosTV.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal)-> {
 			try {
