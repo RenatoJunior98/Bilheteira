@@ -47,7 +47,7 @@
             <Text fx:id="z1" layoutX="161.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z2" layoutX="314.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z3" layoutX="348.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z4" layoutX="353.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z4" layoutX="345.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z8" layoutX="135.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z9" layoutX="98.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z10" layoutX="196.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
@@ -68,7 +68,10 @@
             <Text fx:id="z19" layoutX="201.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z18" layoutX="288.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
             <Text fx:id="z5" layoutX="319.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z25" layoutX="234.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z25" layoutX="234.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indisponível" wrappingWidth="63.470062255859375">
+               <font>
+                  <Font size="11.0" />
+               </font></Text>
          </children>
       </AnchorPane>
    </center>

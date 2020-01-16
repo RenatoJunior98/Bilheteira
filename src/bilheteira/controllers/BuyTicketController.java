@@ -96,3 +96,28 @@ public class BuyTicketController {
 	}
 	
 }
+
+/*
+ * public static void zonaIndisponivel (int zonaID) {
+        int eventoID = 0;
+        Connection conn = DBConnector.getConnection();
+        try (PreparedStatement stat = conn.prepareStatement(
+                "  SELECT LAST_INSERT_ID(eventoID) from evento;")){
+            ResultSet rs = stat.getGeneratedKeys();
+            if (rs.next()){
+                eventoID=rs.getInt(1);
+            }
+        } catch (SQLException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+        try (PreparedStatement stat = conn.prepareStatement(
+                "delete from evento_zona where eventoID_ev_zon = ? and zonaID_ev_zon = ?;\n")) {
+            stat.setInt(1, eventoID);
+            stat.setInt(2, zonaID);
+            }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+*/
