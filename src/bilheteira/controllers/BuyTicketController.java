@@ -48,7 +48,7 @@ public class BuyTicketController {
 	 * Método initialize da classe BuyTicketController
 	 * Faz o preenchimento das ComboBoxs da quantidade de bilhetes e da escolha da zona
 	 */
-	@FXML
+/*	@FXML
 	public void initialize () {
 		escolherZona.setItems(EscolherZona);
 		nBilhetes.setItems(NBilhetes);
@@ -59,7 +59,23 @@ public class BuyTicketController {
 			  zonasText.get(i).setText(String.valueOf(BuyTicketDAO.getLugaresDisponiveis(i)));
 			}
 		
+	} */
+	
+	@FXML
+	public void initialize () {
+		escolherZona.setItems(EscolherZona);
+		nBilhetes.setItems(NBilhetes);
+		zonasText.addAll(z1,z2,z3,z4,z5,z6,z7,z8,z9,z10,z11,z12,z13,z14,z15,z16,z17,z18,z19,z20,z21,z22,z23,z24,z25);
+		
+		ObservableList <Integer> zonas = BuyTicketDAO.getZonasDisponiveis(event.getEventoID());
+		
+		ObservableList <Integer> lugaresDisponiveis = BuyTicketDAO.getLugaresDisponiveis(event.getEventoID());
+		for(int i = 0; i< zonas.size(); i++){
+			  zonasText.get(i).setText(String.valueOf(lugaresDisponiveis.get(i)));
+			}
+		
 	}
+	
 	
 	
 	/**

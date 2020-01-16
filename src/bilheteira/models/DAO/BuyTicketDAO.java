@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javafx.collections.FXCollections;
@@ -72,7 +73,49 @@ public class BuyTicketDAO {
 	    
 	}
 
-	public static int getLugaresDisponiveis(int zonaID) {
+	
+	
+	public static ObservableList<Integer> getLugaresDisponiveis(int eventoID) {
+		Connection conn = DBConnector.getConnection();
+		ObservableList<Integer> lugares = FXCollections.observableArrayList();
+		ObservableList<Integer> zonas = FXCollections.observableArrayList();
+		zonas.addAll(BuyTicketDAO.getZonasDisponiveis(eventoID));
+		/*try (Statement stat = conn.createStatement();
+				ResultSet rs = 
+					stat.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")){
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
+		
+		String sql ="SELECT (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\r\n" + 
+				"				left join evento_zona ON zonaID_ev_zon = zonaID\r\n" + 
+				"				left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n" + 
+				"				where eventoID_ev_zon = ? and zonaID_ev_zon = ?" ;
+			for (int i: zonas) {
+		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+			stat.setInt(1,eventoID);
+			stat.setInt(2, i);
+			try (ResultSet rs = stat.executeQuery()) {
+				while (rs.next()) {
+					lugares.add(rs.getInt("lugares"));
+				}
+			}
+		}	
+		catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+			}
+			return lugares;
+	}
+}
+	
+	
+	
+	
+	/*	public static int getLugaresDisponiveis(int zonaID) {
 		Connection conn = DBConnector.getConnection();
 		String sql = "SELECT lugaresTotalZona - count(eventoZonaID_bilhete) AS \"Lugares Disponiveis\" "
 				+ "FROM ((bilhete inner join evento_zona ON bilhete.eventoZonaID_bilhete=evento_zona.zonaID_ev_zon)"
@@ -95,4 +138,5 @@ public class BuyTicketDAO {
 		}
 	return 0;
 	}
-}
+} */
+//
