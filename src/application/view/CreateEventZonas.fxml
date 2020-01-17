@@ -6,42 +6,49 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="322.0" fitWidth="465.0" layoutX="80.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="322.0" fitWidth="465.0" layoutX="33.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../projetoBilheteira/estadio1.png" />
                </image>
             </ImageView>
-            <CheckBox fx:id="z24" layoutX="110.0" layoutY="102.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z23" layoutX="110.0" layoutY="165.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z22" layoutX="110.0" layoutY="226.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z9" layoutX="159.0" layoutY="62.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z10" layoutX="247.0" layoutY="62.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z11" layoutX="334.0" layoutY="62.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z12" layoutX="419.0" layoutY="62.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z13" layoutX="472.0" layoutY="102.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z14" layoutX="472.0" layoutY="165.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z15" layoutX="472.0" layoutY="226.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z21" layoutX="110.0" layoutY="283.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z20" layoutX="159.0" layoutY="322.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z19" layoutX="247.0" layoutY="322.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z18" layoutX="334.0" layoutY="322.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z17" layoutX="419.0" layoutY="322.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z16" layoutX="472.0" layoutY="283.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z1" layoutX="237.0" layoutY="111.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z2" layoutX="334.0" layoutY="111.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z8" layoutX="170.0" layoutY="157.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z7" layoutX="170.0" layoutY="235.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z6" layoutX="237.0" layoutY="275.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z5" layoutX="334.0" layoutY="275.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z3" layoutX="409.0" layoutY="157.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z4" layoutX="409.0" layoutY="235.0" mnemonicParsing="false" />
-            <Button layoutX="508.0" layoutY="361.0" mnemonicParsing="false" onAction="#submit" text="SUBMIT" />
-            <Button layoutX="443.0" layoutY="361.0" mnemonicParsing="false" text="CANCEL" />
+            <CheckBox fx:id="z24" layoutX="63.0" layoutY="115.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z23" layoutX="63.0" layoutY="178.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z22" layoutX="63.0" layoutY="239.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z9" layoutX="112.0" layoutY="75.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z10" layoutX="200.0" layoutY="75.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z11" layoutX="287.0" layoutY="75.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z12" layoutX="372.0" layoutY="75.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z13" layoutX="425.0" layoutY="115.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z14" layoutX="425.0" layoutY="178.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z15" layoutX="425.0" layoutY="239.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z21" layoutX="63.0" layoutY="296.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z20" layoutX="112.0" layoutY="335.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z19" layoutX="200.0" layoutY="335.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z18" layoutX="287.0" layoutY="335.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z17" layoutX="372.0" layoutY="335.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z16" layoutX="425.0" layoutY="296.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z1" layoutX="190.0" layoutY="124.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z2" layoutX="287.0" layoutY="124.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z8" layoutX="123.0" layoutY="170.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z7" layoutX="123.0" layoutY="248.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z6" layoutX="190.0" layoutY="288.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z5" layoutX="287.0" layoutY="288.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z3" layoutX="362.0" layoutY="170.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z4" layoutX="362.0" layoutY="248.0" mnemonicParsing="false" />
+            <Button layoutX="496.0" layoutY="344.0" mnemonicParsing="false" onAction="#submit" prefHeight="40.0" prefWidth="82.0" text="SUBMIT" />
+            <Button layoutX="507.0" layoutY="313.0" mnemonicParsing="false" text="CANCEL" />
+            <Text layoutX="58.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHA DE ÁREAS INDISPONÍVEIS DO EVENTO">
+               <font>
+                  <Font name="Candara Light" size="24.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </center>

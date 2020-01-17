@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.EventObject;
 
+import bilheteira.models.Event;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -22,6 +24,7 @@ import javafx.collections.ObservableList;
  *
  */
 public class BuyTicketDAO {
+	private int currentEvent;
 	public static void saveBilhete(int idEvento, int zonaID, int nBilhetes) {
 		String sql = "Insert into bilhete (entrada, eventoZonaID_bilhete) values (?,?)";
 		int eventoZonaID = 0;
@@ -55,13 +58,16 @@ public class BuyTicketDAO {
 	public static ObservableList<Integer> getZonasDisponiveis(int idEvento){
 		Connection conn = DBConnector.getConnection();
 		ObservableList<Integer> zonasDisponiveis = FXCollections.observableArrayList();
-		String sql = "SELECT zonaID_ev_zon from evento_zona WHERE eventoId_ev_zon = ?";
+		String sql = "SELECT zonaID from zona inner join evento_zona on zonaID = zonaID_ev_zon WHERE eventoId_ev_zon = ?";
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setInt(1,idEvento);
 			
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
-					zonasDisponiveis.add(rs.getInt("zonaID_ev_zon"));
+					if (BuyTicketDAO.getLugaresDisponiveis(idEvento, rs.getInt("zonaID")) > 0 )
+					zonasDisponiveis.add(rs.getInt("zonaID"));
+					else
+						zonasDisponiveis.add(0);
 				}
 			}
 		}
@@ -75,31 +81,30 @@ public class BuyTicketDAO {
 
 	
 	
-	public static ObservableList<Integer> getLugaresDisponiveis(int eventoID) {
+	public static int getLugaresDisponiveis(int eventoID, int zonaID) {
 		Connection conn = DBConnector.getConnection();
-		ObservableList<Integer> lugares = FXCollections.observableArrayList();
-		ObservableList<Integer> zonas = FXCollections.observableArrayList();
-		zonas.addAll(BuyTicketDAO.getZonasDisponiveis(eventoID));
+		//ObservableList<Integer> lugares = FXCollections.observableArrayList();
+		//ObservableList<Integer> zonas = FXCollections.observableArrayList();
+		int lugaresDisponiveis = 0;
+		//zonas.addAll(BuyTicketDAO.getZonasDisponiveis(eventoID));
 		String sql ="SELECT (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\r\n" + 
 				"				left join evento_zona ON zonaID_ev_zon = zonaID\r\n" + 
 				"				left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n" + 
 				"				where eventoID_ev_zon = ? and zonaID_ev_zon = ?" ;
-			for (int i: zonas) {
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setInt(1,eventoID);
-			stat.setInt(2, i);
+			stat.setInt(2, zonaID);
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
-					lugares.add(rs.getInt("lugares"));
+					lugaresDisponiveis = rs.getInt("lugares");
 				}
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			return null;
 		}
-			}
-			return lugares;
+			
+			return lugaresDisponiveis;
 	}
 }
 	

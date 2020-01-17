@@ -137,13 +137,16 @@ public final class EventListDAO {
                 System.out.println("EVENTOID --------------------------------------  " + eventoID);
             }
          for (int i : zonasIndisponiveis) {
-        try (PreparedStatement stats = conn.prepareStatement(
-                "delete from evento_zona where eventoID_ev_zon = ? and zonaID_ev_zon = ?;")) {
-            stat.setInt(1, eventoID);
-            stat.setInt(2, i);
+       // try (
+        	 PreparedStatement stats = conn.prepareStatement(
+                "delete from evento_zona where eventoID_ev_zon = ? and zonaID_ev_zon = ?;"); 
+            stats.setInt(1, eventoID);
+            stats.setInt(2, i);
+            stats.execute();
             System.out.println("zona Cancelada ---------- " + zonasIndisponiveis);
-            }
-         }
+            //}
+         
+        }
         }
         catch (SQLException e) {
         	System.out.println("Nao cancelou");
