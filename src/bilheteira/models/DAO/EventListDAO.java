@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import java.sql.PreparedStatement;
+
 import bilheteira.models.Event;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -122,5 +124,31 @@ public final class EventListDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void zonaIndisponivel (ObservableList<Integer> zonasIndisponiveis) {
+        int eventoID = 0;
+        Connection conn = DBConnector.getConnection();
+        try (PreparedStatement stat = conn.prepareStatement(
+                "  SELECT MAX(eventoID) from evento;")){
+        	ResultSet rs = stat.executeQuery();
+            if (rs.next()){
+                eventoID=rs.getInt(1);
+                System.out.println("EVENTOID --------------------------------------  " + eventoID);
+            }
+         for (int i : zonasIndisponiveis) {
+        try (PreparedStatement stats = conn.prepareStatement(
+                "delete from evento_zona where eventoID_ev_zon = ? and zonaID_ev_zon = ?;")) {
+            stat.setInt(1, eventoID);
+            stat.setInt(2, i);
+            System.out.println("zona Cancelada ---------- " + zonasIndisponiveis);
+            }
+         }
+        }
+        catch (SQLException e) {
+        	System.out.println("Nao cancelou");
+            e.printStackTrace();
+        }
+  
 	}
 }

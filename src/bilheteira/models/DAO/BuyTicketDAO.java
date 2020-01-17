@@ -80,15 +80,6 @@ public class BuyTicketDAO {
 		ObservableList<Integer> lugares = FXCollections.observableArrayList();
 		ObservableList<Integer> zonas = FXCollections.observableArrayList();
 		zonas.addAll(BuyTicketDAO.getZonasDisponiveis(eventoID));
-		/*try (Statement stat = conn.createStatement();
-				ResultSet rs = 
-					stat.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")){
-			
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
-		
 		String sql ="SELECT (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\r\n" + 
 				"				left join evento_zona ON zonaID_ev_zon = zonaID\r\n" + 
 				"				left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n" + 
@@ -102,7 +93,7 @@ public class BuyTicketDAO {
 					lugares.add(rs.getInt("lugares"));
 				}
 			}
-		}	
+		}
 		catch (SQLException e) {
 			e.printStackTrace();
 			return null;

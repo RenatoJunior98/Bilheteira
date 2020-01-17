@@ -1,10 +1,13 @@
 package bilheteira.controllers;
 
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTimePicker;
+
+import application.Main;
 import bilheteira.models.DAO.EventListDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,6 +57,12 @@ public class CreateEventController {
 
 		EventListDAO.saveEvento(nome.getText(), Double.valueOf(precoBase.getText()), dataHora);
 		
+		try {
+			Main.createNewWindow("view/CreateEventZonas.fxml", new SelectZoneController());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
