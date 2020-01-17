@@ -139,7 +139,9 @@ public final class EventListDAO {
          for (int i : zonasIndisponiveis) {
        // try (
         	 PreparedStatement stats = conn.prepareStatement(
-                "delete from evento_zona where eventoID_ev_zon = ? and zonaID_ev_zon = ?;"); 
+                "UPDATE evento_zona " + 
+                "SET isIndisponivel = 1 " + 
+                "WHERE eventoID_ev_zon = ? and zonaID_ev_zon = ?;"); 
             stats.setInt(1, eventoID);
             stats.setInt(2, i);
             stats.execute();
