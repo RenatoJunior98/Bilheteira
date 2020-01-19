@@ -7,29 +7,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #394553;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="221.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TROCA DE BILHETES" wrappingWidth="158.0">
+            <Text fill="WHITE" layoutX="203.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TROCA DE BILHETES" textAlignment="CENTER" wrappingWidth="374.0">
                <font>
-                  <Font name="Candara Light" size="18.0" />
+                  <Font name="Candara Light" size="36.0" />
                </font>
             </Text>
-            <TextField alignment="CENTER" layoutX="156.0" layoutY="151.0" prefHeight="49.0" prefWidth="289.0" promptText="XXXX-XXXX-XXXX">
+            <TextField alignment="CENTER" layoutX="221.0" layoutY="186.0" prefHeight="84.0" prefWidth="340.0" promptText="CÓDIGO DO BILHETE">
                <font>
-                  <Font size="20.0" />
+                  <Font size="24.0" />
                </font>
             </TextField>
-            <Button layoutX="212.0" layoutY="225.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="178.0" text="CONFIRMAR">
+            <Button layoutX="301.0" layoutY="297.0" mnemonicParsing="false" onAction="#confirmarCodigo" prefHeight="51.0" prefWidth="178.0" text="CONFIRMAR">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Text layoutX="166.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA O CODIGO DO BILHETE" wrappingWidth="270.0">
+            <Text fill="WHITE" layoutX="225.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA O CODIGO DO BILHETE" textAlignment="CENTER" wrappingWidth="331.0">
                <font>
-                  <Font name="Candara Light" size="21.0" />
+                  <Font name="Candara Light" size="24.0" />
                </font>
             </Text>
          </children>

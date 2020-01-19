@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import application.Main;
 import javafx.fxml.FXML;
+import javafx.stage.Stage;
 
 	/**
 	 * Classe que controla a Main Stage (primeiro FXML que aparece ao iniciar a aplicação)
@@ -48,7 +49,7 @@ public class MainStageController {
 	 */
 	public void onRefound () {
 		try {
-			Main.createNewWindow("view/Refound.fxml", null);
+			Main.createNewWindow("view/Refound.fxml", new RefoundController());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

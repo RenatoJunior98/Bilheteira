@@ -31,6 +31,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("18216.png")));
 		primaryStage.setTitle("Bilheteira");
+		
 		try {
 			createNewWindow("view/MainStage.fxml", new MainStageController());
 		} catch(Exception e) {
@@ -62,6 +63,20 @@ public class Main extends Application {
 		stage.show();
 		
 	}
+	
+//	public static void createNewWindowAndClose (String fxmlLocation, Object controller) throws IOException {
+//		FXMLLoader loader = new FXMLLoader(Main.class.getResource(fxmlLocation));
+//		loader.setController(controller);
+//				Stage stage =  new Stage();
+//		stage.getIcons().add(new Image(Main.class.getResourceAsStream("18216.png")));
+//		stage.setTitle("Bilheteira");
+//		Scene scene = new Scene(loader.load());
+//		scene.getStylesheets().add(Main.class.getResource("application.css").toExternalForm());
+//		currentStage = stage;
+//		stage.setScene(scene);
+//		stage.show();
+//		
+//	}
 
 
 	public static Stage getCurrentStage() {

@@ -5,8 +5,9 @@
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
@@ -16,60 +17,60 @@
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXTimePicker fx:id="hora" defaultColor="#00a0c4" layoutX="111.0" layoutY="183.0" prefHeight="25.0" prefWidth="133.0">
+            <JFXTimePicker fx:id="hora" defaultColor="#00a0c4" layoutX="243.0" layoutY="196.0" prefHeight="25.0" prefWidth="133.0">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></JFXTimePicker>
-            <JFXDatePicker fx:id="data" defaultColor="#00a7c7" layoutX="111.0" layoutY="127.0" prefHeight="25.0" prefWidth="130.0">
+            <JFXDatePicker fx:id="data" defaultColor="#00a7c7" layoutX="244.0" layoutY="129.0" prefHeight="25.0" prefWidth="130.0">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></JFXDatePicker>
-            <Text layoutX="233.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRIAÇÃO DE EVENTOS">
+            <Text layoutX="233.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRIAÇÃO DE EVENTOS">
                <font>
                   <Font name="Candara Light" size="30.0" />
                </font>
             </Text>
-            <Label layoutX="62.0" layoutY="187.0" prefHeight="17.0" prefWidth="48.0" text="HORA:">
+            <Label layoutX="187.0" layoutY="199.0" prefHeight="20.0" prefWidth="44.0" text="HORA:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label layoutX="63.0" layoutY="131.0" prefHeight="17.0" prefWidth="48.0" text="DATA:">
+            <Label layoutX="188.0" layoutY="132.0" prefHeight="20.0" prefWidth="41.0" text="DATA:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label layoutX="18.0" layoutY="65.0" prefHeight="20.0" prefWidth="134.0" text="NOME DO EVENTO:">
+            <Label layoutX="109.0" layoutY="66.0" prefHeight="20.0" prefWidth="134.0" text="NOME DO EVENTO:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <JFXTextField fx:id="nome" layoutX="149.0" layoutY="61.0" prefHeight="25.0" prefWidth="580.0" unFocusColor="BLACK">
+            <JFXTextField fx:id="nome" layoutX="244.0" layoutY="63.0" prefHeight="25.0" prefWidth="407.0" unFocusColor="BLACK">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></JFXTextField>
-            <Label layoutX="62.0" layoutY="245.0" prefHeight="20.0" prefWidth="96.0" text="PREÇO BASE:">
+            <Label layoutX="147.0" layoutY="265.0" prefHeight="20.0" prefWidth="84.0" text="PREÇO BASE:">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <JFXTextField fx:id="precoBase" focusColor="#d01e18" layoutX="156.0" layoutY="240.0" prefHeight="25.0" prefWidth="39.0" unFocusColor="BLACK">
+            <JFXTextField fx:id="precoBase" focusColor="#d01e18" layoutX="244.0" layoutY="262.0" prefHeight="25.0" prefWidth="39.0" unFocusColor="BLACK">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </JFXTextField>
-            <Text layoutX="204.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="€">
+            <Text layoutX="290.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="€">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Label layoutX="503.0" layoutY="152.0" prefHeight="20.0" prefWidth="113.0" text="TIPO DE EVENTO:">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <ComboBox fx:id="categoryBox" layoutX="484.0" layoutY="185.0" prefWidth="150.0" />
             <Button layoutX="521.0" layoutY="448.0" mnemonicParsing="false" onAction="#inserir" prefHeight="52.0" prefWidth="163.0" text="CONTINUAR">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
             <Text layoutX="513.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clique em continuar para poder definir as zonas do evento" textAlignment="CENTER" wrappingWidth="179.55859375" />
+            <ImageView fitHeight="288.0" fitWidth="394.0" layoutX="51.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../logoEstadio.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </left>

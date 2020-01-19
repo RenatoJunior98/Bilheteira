@@ -1,5 +1,8 @@
 package bilheteira.controllers;
 
+import java.io.IOException;
+
+import application.Main;
 import bilheteira.models.DAO.EventListDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,6 +32,14 @@ public class SelectZoneController {
 		System.out.println(i+1);
 		}	
 		EventListDAO.zonaIndisponivel(zonasIndisponiveis);
+	
+		try {
+			Main.getCurrentStage().close();
+			Main.createNewWindow("view/Confirmacao.fxml", new SelectZoneController ());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	}
 	
-}
+

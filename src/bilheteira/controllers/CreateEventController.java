@@ -23,15 +23,15 @@ import javafx.scene.control.ComboBox;
 
 public class CreateEventController {
 
-	private ObservableList<String> CategoryList = FXCollections
-			.observableArrayList ("Jogo de Desporto","Concerto","Espetáculo","Outro");
+	//private ObservableList<String> CategoryList = FXCollections
+	//     .observableArrayList ("Jogo de Desporto","Concerto","Espetáculo","Outro");
 
 	@FXML
     private ComboBox<String> categoryBox;
 	
 	@FXML
 	public void initialize () {
-		categoryBox.setItems(CategoryList);
+		//categoryBox.setItems(CategoryList);
 	}
 
 	
@@ -58,6 +58,7 @@ public class CreateEventController {
 		EventListDAO.saveEvento(nome.getText(), Double.valueOf(precoBase.getText()), dataHora);
 		
 		try {
+			Main.getCurrentStage().close();
 			Main.createNewWindow("view/CreateEventZonas.fxml", new SelectZoneController());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #394553;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="31.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DINHEIRO A DEVOLVER" wrappingWidth="239.0">
+               <font>
+                  <Font name="Candara Light" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="77.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" textAlignment="CENTER" wrappingWidth="146.1875">
+               <font>
+                  <Font name="Candara Light" size="48.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+   </center>
+</BorderPane>

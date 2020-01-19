@@ -44,35 +44,36 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Text fx:id="z1" layoutX="161.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z2" layoutX="314.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z3" layoutX="348.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z4" layoutX="345.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z8" layoutX="135.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z9" layoutX="98.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z10" layoutX="196.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z11" layoutX="296.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z12" layoutX="385.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z13" layoutX="465.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z14" layoutX="456.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z7" layoutX="122.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z6" layoutX="164.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z24" layoutX="15.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z15" layoutX="451.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z17" layoutX="384.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z16" layoutX="463.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z20" layoutX="108.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z23" layoutX="19.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z22" layoutX="20.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z21" layoutX="19.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z19" layoutX="201.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z18" layoutX="288.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z5" layoutX="319.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="63.470062255859375" />
-            <Text fx:id="z25" layoutX="234.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indisponível" wrappingWidth="63.470062255859375">
-               <font>
-                  <Font size="11.0" />
-               </font></Text>
+            <Text fx:id="z1" layoutX="161.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z2" layoutX="314.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z3" layoutX="348.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z4" layoutX="345.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z8" layoutX="122.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z9" layoutX="98.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z10" layoutX="196.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z11" layoutX="296.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z12" layoutX="368.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z13" layoutX="451.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z14" layoutX="451.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z7" layoutX="122.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z6" layoutX="164.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z24" layoutX="15.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z15" layoutX="451.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z17" layoutX="376.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z16" layoutX="451.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z20" layoutX="103.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z23" layoutX="19.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z22" layoutX="20.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z21" layoutX="19.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z19" layoutX="201.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z18" layoutX="288.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
+            <Text fx:id="z5" layoutX="313.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="63.470062255859375" />
             <Button layoutX="719.0" layoutY="156.0" mnemonicParsing="false" onAction="#confirmarZona" prefHeight="29.0" prefWidth="133.0" text="CONFIRMAR ZONA" />
+            <Text layoutX="230.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RELVADO" textAlignment="CENTER" wrappingWidth="68.8466796875">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </center>
