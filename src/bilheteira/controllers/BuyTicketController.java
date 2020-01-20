@@ -78,6 +78,7 @@ public class BuyTicketController {
 	}
 	@FXML
 	private void confirmarZona() {
+			NBilhetes.clear();
 		if (escolherZona.getSelectionModel().getSelectedItem() != null) {
 			if ((BuyTicketDAO.getLugaresDisponiveis(event.getEventoID(), escolherZona.getSelectionModel().getSelectedItem())) < 16) {
 				for (int i =1; i<= BuyTicketDAO.getLugaresDisponiveis(event.getEventoID(), escolherZona.getValue()); i++) {
