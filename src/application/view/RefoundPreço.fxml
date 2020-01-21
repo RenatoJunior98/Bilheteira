@@ -14,11 +14,10 @@
                   <Font name="Candara Light" size="24.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="77.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" textAlignment="CENTER" wrappingWidth="146.1875">
+            <Text fx:id="precoBilheteText" fill="WHITE" layoutX="106.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
-                  <Font name="Candara Light" size="48.0" />
-               </font>
-            </Text>
+                  <Font size="48.0" />
+               </font></Text>
          </children></AnchorPane>
    </center>
 </BorderPane>

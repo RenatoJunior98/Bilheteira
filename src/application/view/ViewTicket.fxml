@@ -17,27 +17,47 @@
                   <Image url="@../../../../../bilhete.template.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="82.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME DO EVENTO" wrappingWidth="540.13671875">
+            <Text fx:id="nome" fill="WHITE" layoutX="82.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME DO EVENTO" wrappingWidth="540.13671875">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="456.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA E DIA" wrappingWidth="166.826171875">
+            <Text fx:id="dataHora" fill="WHITE" layoutX="452.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="dataHoras" wrappingWidth="166.826171875">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="456.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREÇO:" wrappingWidth="56.826171875">
+            <Text fill="WHITE" layoutX="452.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PREÇO:" wrappingWidth="49.492828369140625">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="513.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="33.826171875">
+            <Text fx:id="preco" fill="WHITE" layoutX="511.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="33.826171875">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
             <JFXComboBox focusColor="#34aed3" layoutX="457.0" layoutY="175.0" prefHeight="25.0" prefWidth="156.0" promptText="CÓDIGO BILHETE" unFocusColor="#868686" />
+            <Text fill="WHITE" layoutX="456.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONA:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="zona" fill="WHITE" layoutX="509.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="38.5306396484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="456.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PORTÂO:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="portao" fill="WHITE" layoutX="525.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--" wrappingWidth="38.5306396484375">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </center>
