@@ -5,9 +5,7 @@ import java.io.IOException;
 import application.Main;
 import bilheteira.models.DAO.RefundTicketDAO;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 public class RefoundController {
 

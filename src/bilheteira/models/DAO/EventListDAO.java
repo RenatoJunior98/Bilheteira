@@ -101,6 +101,62 @@ public final class EventListDAO {
 			e.printStackTrace();
 			} 	
 	}
+	public static int getPortaoID (int zonaID) {
+		String sql = "select portao from zona where zonaID = ?";
+		Connection conn = DBConnector.getConnection();
+		try (PreparedStatement stat = conn.prepareStatement( sql )) {
+			stat.setInt(1, zonaID);
+			try (ResultSet rs = stat.executeQuery()) {
+				while (rs.next()) {
+					return rs.getInt("portao");
+				}
+			}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public static String getEventoData (int eventoID) {
+		String sql = "select nome dia from evento where eventoID = ?";
+		Connection conn = DBConnector.getConnection();
+		try (PreparedStatement stat = conn.prepareStatement( sql )) {
+			stat.setInt(1, eventoID);
+			try (ResultSet rs = stat.executeQuery()) {
+				while (rs.next()) {
+					return rs.getString("dia");
+				}
+			}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static String getEventoNome (int eventoID) {
+		String sql = "select nome from evento where eventoID = ?";
+		String nome = null;
+		Connection conn = DBConnector.getConnection();
+		try (PreparedStatement stat = conn.prepareStatement( sql )) {
+			stat.setInt(1, eventoID);
+			try (ResultSet rs = stat.executeQuery()) {
+				while (rs.next()) {
+					nome = rs.getString("nome");
+					
+					System.out.println("/n/n/n/n/n/n " + nome);
+				}
+			}
+		
+		} catch (SQLException e) {			
+			System.out.println("/n/n/n/n/n/n/n Erron no getEventoNome");
+			e.printStackTrace();
+		}
+		return nome;
+	}
 	
 	/**
 	 * Metodo saveEvento é dedicado a introduzir um novo evento na tabela EventoZona

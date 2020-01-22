@@ -4,6 +4,7 @@ import java.io.IOException;
 import application.Main;
 import bilheteira.models.Event;
 import bilheteira.models.DAO.BuyTicketDAO;
+import bilheteira.models.DAO.EventListDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -27,6 +28,8 @@ public class BuyTicketController {
 	
 	private ObservableList<Integer> NBilhetes = FXCollections.observableArrayList();//(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30);
 	private ObservableList<Integer> lugaresDisponiveis = FXCollections.observableArrayList();
+	private ObservableList<Integer> codigosBilhetes = FXCollections.observableArrayList();
+
 	@FXML
     private ComboBox<Integer> nBilhetes;
 	
@@ -102,10 +105,10 @@ public class BuyTicketController {
 	private void comprar() {
 		//int selectedZona = 0;
 		//selectedZona = escolherZona.getSelectionModel().getSelectedItem();
-		BuyTicketDAO.saveBilhete(event.getEventoID(), escolherZona.getValue(), nBilhetes.getValue());
+		codigosBilhetes.addAll(BuyTicketDAO.saveBilhete(event.getEventoID(), escolherZona.getValue(), nBilhetes.getValue()));
 		
 		try {
-			Main.createNewWindow("view/ViewTicket.fxml", new ViewTicketController());
+			Main.createNewWindow("view/ViewTicket.fxml", new ViewTicketController(codigosBilhetes, event.getNome(), event.getEventoID(), escolherZona.getValue(), event.getDataHora()));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

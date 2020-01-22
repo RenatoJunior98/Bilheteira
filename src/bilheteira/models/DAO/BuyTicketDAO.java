@@ -24,7 +24,8 @@ import javafx.collections.ObservableList;
  *
  */
 public class BuyTicketDAO {
-	public static void saveBilhete(int idEvento, int zonaID, int nBilhetes) {
+	public static ObservableList <Integer> saveBilhete(int idEvento, int zonaID, int nBilhetes) {
+		ObservableList <Integer> codigosBilhetes = FXCollections.observableArrayList();
 		String sql = "Insert into bilhete (entrada, eventoZonaID_bilhete) values (?,?)";
 		int eventoZonaID = 0;
 		Connection conn = DBConnector.getConnection();
@@ -42,16 +43,21 @@ public class BuyTicketDAO {
 		}
 
 		for (int i=0 ; i<nBilhetes ; i++) {
-		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+		try (PreparedStatement stat = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			stat.setBoolean(1, false);
 			stat.setInt(2, eventoZonaID);
 			stat.executeUpdate();
+			ResultSet rs = stat.getGeneratedKeys();
+			if (rs.next()){
+			    codigosBilhetes.add(rs.getInt(1));
+			}
 		} catch (SQLException e) {
 			System.out.println("Fail");
 			e.printStackTrace();
 		}
 
 		}
+		return codigosBilhetes;
 	}
 	
 	public static ObservableList<Integer> getZonasDisponiveis(int idEvento){
