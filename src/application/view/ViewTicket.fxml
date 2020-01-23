@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="529.0" fitWidth="884.0" layoutX="-4.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="file:///C:/Users/TheRenas/Desktop/Bilheteira-master/src/application/bilhete.template.png" />
+                  <Image url="@../../../bin/application/bilhete.template.png" />
                </image>
             </ImageView>
             <Text fx:id="nomeEvento" fill="WHITE" layoutX="82.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOME DO EVENTO" wrappingWidth="540.13671875">
@@ -37,7 +37,6 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <JFXComboBox fx:id="codigoBilhete" focusColor="#34aed3" layoutX="457.0" layoutY="175.0" prefHeight="25.0" prefWidth="156.0" promptText="CÓDIGO BILHETE" unFocusColor="#868686" />
             <Text fill="WHITE" layoutX="456.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ZONA:">
                <font>
                   <Font size="14.0" />
@@ -58,6 +57,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
+            <ComboBox fx:id="codigoBilhete" layoutX="460.0" layoutY="154.0" prefWidth="150.0" promptText="CÓDIGO BILHETE" />
          </children>
       </AnchorPane>
    </center>

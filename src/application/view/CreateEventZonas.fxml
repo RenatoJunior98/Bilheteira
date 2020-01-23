@@ -43,7 +43,6 @@
             <CheckBox fx:id="z3" layoutX="362.0" layoutY="170.0" mnemonicParsing="false" />
             <CheckBox fx:id="z4" layoutX="362.0" layoutY="248.0" mnemonicParsing="false" />
             <Button layoutX="496.0" layoutY="344.0" mnemonicParsing="false" onAction="#submit" prefHeight="40.0" prefWidth="82.0" text="SUBMIT" />
-            <Button layoutX="507.0" layoutY="313.0" mnemonicParsing="false" text="CANCEL" />
             <Text layoutX="58.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHA DE ÁREAS INDISPONÍVEIS DO EVENTO">
                <font>
                   <Font name="Candara Light" size="24.0" />
