@@ -1,5 +1,8 @@
 package bilheteira.controllers;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import bilheteira.models.DAO.RefundTicketDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,7 +22,8 @@ public class PrecoFinalController {
 	private Text precoTotalText;
 
 	private ObservableList<Integer> codigosBilhetes = FXCollections.observableArrayList();
-	private int precoTotalBilhete = 0;
+	private double precoTotalBilhete = 0;
+	
 
 	public PrecoFinalController(ObservableList<Integer> codigosBilhetes) {
 		this.codigosBilhetes = codigosBilhetes;
@@ -34,6 +38,8 @@ public class PrecoFinalController {
 	@FXML
 	public void initialize() {
 		precoTotalBilhete += RefundTicketDAO.getPreco(codigosBilhetes.get(0)) * codigosBilhetes.size();
+		BigDecimal bd = new BigDecimal(precoTotalBilhete).setScale(2, RoundingMode.HALF_UP);
+		precoTotalBilhete = bd.doubleValue();
 		precoTotalText.setText(String.valueOf(precoTotalBilhete));
 
 	}
