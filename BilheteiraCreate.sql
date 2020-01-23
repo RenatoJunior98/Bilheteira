@@ -31,13 +31,15 @@ create table bilhete (  codigoBilhete int not null auto_increment,
 						codigoQr blob,
                         entrada tinyint,
                         tempoBilhete timestamp default CURRENT_TIMESTAMP,
-						userID_bilhete int,
+						userID_bilhete int not null,
                         eventoZonaID_bilhete int not null,
+						isDevolvido TINYINT NOT NULL DEFAULT '0',
                         primary key (codigoBilhete));
 					
 create table evento_zona(eventoZonaID int not null auto_increment,
 						eventoID_ev_zon int not null,
 						zonaID_ev_zon int not null,
+                        isIndisponivel TINYINT NOT NULL DEFAULT '0',
 						primary key (eventoZonaID));
 
 	alter table zona add constraint zona_estadio
