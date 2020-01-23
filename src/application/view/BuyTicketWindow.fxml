@@ -25,7 +25,7 @@
             </Text>
             <ImageView fitHeight="390.0" fitWidth="637.0" layoutX="-54.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../estadioZonas.png" />
+                  <Image url="@../../../bin/application/estadioZonas.png" />
                </image>
             </ImageView>
             <Text layoutX="700.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHA A ZONA">

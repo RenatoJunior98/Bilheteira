@@ -18,7 +18,7 @@
             </Text>
             <ImageView fitHeight="185.0" fitWidth="179.0" layoutX="61.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icon_3_tick_hover.gif" />
+                  <Image url="@../../../bin/application/icon_3_tick_hover.gif" />
                </image>
             </ImageView>
          </children></AnchorPane>

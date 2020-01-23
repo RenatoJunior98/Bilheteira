@@ -13,35 +13,35 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="322.0" fitWidth="465.0" layoutX="33.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="320.0" fitWidth="426.0" layoutX="39.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../projetoBilheteira/estadio1.png" />
+                  <Image url="@../../../bin/application/estadio1.png" />
                </image>
             </ImageView>
-            <CheckBox fx:id="z24" layoutX="63.0" layoutY="115.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z23" layoutX="63.0" layoutY="178.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z22" layoutX="63.0" layoutY="239.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z9" layoutX="112.0" layoutY="75.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z10" layoutX="200.0" layoutY="75.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z11" layoutX="287.0" layoutY="75.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z12" layoutX="372.0" layoutY="75.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z13" layoutX="425.0" layoutY="115.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z14" layoutX="425.0" layoutY="178.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z15" layoutX="425.0" layoutY="239.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z24" layoutX="63.0" layoutY="107.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z23" layoutX="63.0" layoutY="170.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z22" layoutX="63.0" layoutY="231.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z9" layoutX="112.0" layoutY="67.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z10" layoutX="201.0" layoutY="67.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z11" layoutX="290.0" layoutY="67.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z12" layoutX="373.0" layoutY="67.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z13" layoutX="425.0" layoutY="107.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z14" layoutX="425.0" layoutY="170.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z15" layoutX="425.0" layoutY="223.0" mnemonicParsing="false" />
             <CheckBox fx:id="z21" layoutX="63.0" layoutY="296.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z20" layoutX="112.0" layoutY="335.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z19" layoutX="200.0" layoutY="335.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z18" layoutX="287.0" layoutY="335.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z17" layoutX="372.0" layoutY="335.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z20" layoutX="112.0" layoutY="327.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z19" layoutX="200.0" layoutY="327.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z18" layoutX="287.0" layoutY="327.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z17" layoutX="372.0" layoutY="327.0" mnemonicParsing="false" />
             <CheckBox fx:id="z16" layoutX="425.0" layoutY="296.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z1" layoutX="190.0" layoutY="124.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z2" layoutX="287.0" layoutY="124.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z8" layoutX="123.0" layoutY="170.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z7" layoutX="123.0" layoutY="248.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z6" layoutX="190.0" layoutY="288.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z5" layoutX="287.0" layoutY="288.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z3" layoutX="362.0" layoutY="170.0" mnemonicParsing="false" />
-            <CheckBox fx:id="z4" layoutX="362.0" layoutY="248.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z1" layoutX="190.0" layoutY="115.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z2" layoutX="298.0" layoutY="116.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z8" layoutX="123.0" layoutY="162.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z7" layoutX="123.0" layoutY="240.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z6" layoutX="190.0" layoutY="280.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z5" layoutX="298.0" layoutY="280.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z3" layoutX="362.0" layoutY="154.0" mnemonicParsing="false" />
+            <CheckBox fx:id="z4" layoutX="362.0" layoutY="232.0" mnemonicParsing="false" />
             <Button layoutX="496.0" layoutY="344.0" mnemonicParsing="false" onAction="#submit" prefHeight="40.0" prefWidth="82.0" text="SUBMIT" />
             <Text layoutX="58.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ESCOLHA DE ÁREAS INDISPONÍVEIS DO EVENTO">
                <font>
