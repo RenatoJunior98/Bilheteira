@@ -1,5 +1,8 @@
 package bilheteira.controllers;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import bilheteira.models.DAO.RefundTicketDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -39,6 +42,8 @@ public class RefundPriceController {
 	 */
 	public void mostrarPreco() {
 		precoBilhete = RefundTicketDAO.getPreco(Integer.valueOf(codigoBilhete.getText()));
+		BigDecimal bd = new BigDecimal(precoBilhete).setScale(2, RoundingMode.HALF_UP);
+		precoBilhete = bd.doubleValue();
 		sPreco = String.valueOf(precoBilhete);
 		System.out.println("------" + precoBilhete);
 		System.out.println(sPreco);
