@@ -103,7 +103,6 @@ public final class EventListDAO {
 			System.out.println(dataHora);
 			saveEventoZona(eventID);
 		} catch (SQLException e) {
-			System.out.println("Fail");
 			e.printStackTrace();
 		}
 	}
@@ -120,7 +119,6 @@ public final class EventListDAO {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return -1;
@@ -138,7 +136,6 @@ public final class EventListDAO {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -153,13 +150,10 @@ public final class EventListDAO {
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
 					nome = rs.getString("nome");
-
-					System.out.println("/n/n/n/n/n/n " + nome);
 				}
 			}
 
 		} catch (SQLException e) {
-			System.out.println("/n/n/n/n/n/n/n Erron no getEventoNome");
 			e.printStackTrace();
 		}
 		return nome;
@@ -194,7 +188,6 @@ public final class EventListDAO {
 			ResultSet rs = stat.executeQuery();
 			if (rs.next()) {
 				eventoID = rs.getInt(1);
-				System.out.println("EVENTOID --------------------------------------  " + eventoID);
 			}
 			for (int i : zonasIndisponiveis) {
 				PreparedStatement stats = conn.prepareStatement("UPDATE evento_zona " + "SET isIndisponivel = 1 "
@@ -202,11 +195,8 @@ public final class EventListDAO {
 				stats.setInt(1, eventoID);
 				stats.setInt(2, i);
 				stats.execute();
-				System.out.println("zona Cancelada ---------- " + zonasIndisponiveis);
-
 			}
 		} catch (SQLException e) {
-			System.out.println("Nao cancelou");
 			e.printStackTrace();
 		}
 

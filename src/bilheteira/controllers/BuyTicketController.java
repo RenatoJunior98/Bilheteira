@@ -20,20 +20,20 @@ import javafx.scene.text.Text;
  */
 public class BuyTicketController {
 
-
 	@FXML
 	private ComboBox<Integer> escolherZona;
 
 	private ObservableList<Integer> NBilhetes = FXCollections.observableArrayList();
 	private ObservableList<Integer> lugaresDisponiveis = FXCollections.observableArrayList();
 	private ObservableList<Integer> codigosBilhetes = FXCollections.observableArrayList();
+	private int nBilhetesTotal = 15;
 
 	@FXML
 	private ComboBox<Integer> nBilhetes;
 
-	private ObservableList <Text> zonasText = FXCollections.observableArrayList();
-	ObservableList <Integer> zonasDisponiveis = FXCollections.observableArrayList();
-	
+	private ObservableList<Text> zonasText = FXCollections.observableArrayList();
+	ObservableList<Integer> zonasDisponiveis = FXCollections.observableArrayList();
+
 	@FXML
 	private Text z1, z2, z3, z4, z5, z6, z7, z8, z9, z10, z11, z12, z13, z14, z15, z16, z17, z18, z19, z20, z21, z22,
 			z23, z24, z25;
@@ -55,22 +55,14 @@ public class BuyTicketController {
 
 	@FXML
 	public void initialize() {
-		for (int j: BuyTicketDAO.getZonasDisponiveis(event.getEventoID())) {
-			if (j != 0) {
-				zonasDisponiveis.add(j);
-			}
-		}
+		zonasDisponiveis.addAll(BuyTicketDAO.getZonasDisponiveis(event.getEventoID()));
 		escolherZona.setItems(zonasDisponiveis);
 		zonasText.addAll(z1, z2, z3, z4, z5, z6, z7, z8, z9, z10, z11, z12, z13, z14, z15, z16, z17, z18, z19, z20, z21,
 				z22, z23, z24, z25);
-		ObservableList<Integer> zonas = BuyTicketDAO.getZonasDisponiveis(event.getEventoID());
-		for (int i = 1; i < 25; i++) {
-			lugaresDisponiveis.add(BuyTicketDAO.getLugaresDisponiveis(event.getEventoID(), i));
-		}
-		for (int i = 0; i < zonas.size(); i++) {
+		lugaresDisponiveis.addAll(BuyTicketDAO.getLugaresDisponiveis(event.getEventoID()));
+		for (int i = 0; i < lugaresDisponiveis.size(); i++) {
 			zonasText.get(i).setText(String.valueOf(lugaresDisponiveis.get(i)));
 		}
-
 	}
 
 	/**
@@ -83,12 +75,11 @@ public class BuyTicketController {
 
 	@FXML
 	private void confirmarZona() {
+		lugaresDisponiveis = BuyTicketDAO.getLugaresDisponiveis(event.getEventoID());
 		NBilhetes.clear();
 		if (escolherZona.getSelectionModel().getSelectedItem() != null) {
-			if ((BuyTicketDAO.getLugaresDisponiveis(event.getEventoID(),
-					escolherZona.getSelectionModel().getSelectedItem())) < 16) {
-				for (int i = 1; i <= BuyTicketDAO.getLugaresDisponiveis(event.getEventoID(),
-						escolherZona.getValue()); i++) {
+			if (lugaresDisponiveis.get(escolherZona.getValue() - 1) <= nBilhetesTotal) {
+				for (int i = 1; i <= escolherZona.getValue(); i++) {
 					NBilhetes.add(i);
 				}
 			}

@@ -27,7 +27,6 @@ public class PrecoFinalController {
 
 	public PrecoFinalController(ObservableList<Integer> codigosBilhetes) {
 		this.codigosBilhetes = codigosBilhetes;
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

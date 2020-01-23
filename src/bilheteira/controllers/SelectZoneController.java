@@ -52,7 +52,6 @@ public class SelectZoneController {
 			if (!checkBoxes.get(i).isSelected())
 				continue;
 			zonasIndisponiveis.add(i + 1);
-			System.out.println(i + 1);
 		}
 		EventListDAO.zonaIndisponivel(zonasIndisponiveis);
 

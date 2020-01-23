@@ -47,10 +47,8 @@ public class BuyTicketDAO {
 				ResultSet rs = stat.getGeneratedKeys();
 				if (rs.next()) {
 					codigosBilhetes.add(rs.getInt(1));
-					System.out.println("---------------------------------------------" + codigosBilhetes.get(i));
 				}
 			} catch (SQLException e) {
-				System.out.println("Fail");
 				e.printStackTrace();
 			}
 
@@ -69,17 +67,12 @@ public class BuyTicketDAO {
 	public static ObservableList<Integer> getZonasDisponiveis(int idEvento) {
 		Connection conn = DBConnector.getConnection();
 		ObservableList<Integer> zonasDisponiveis = FXCollections.observableArrayList();
-		String sql = "SELECT zonaID, isIndisponivel from zona inner join evento_zona on zonaID = zonaID_ev_zon WHERE eventoId_ev_zon = ?";
+		String sql = "SELECT zonaID_ev_zon from evento_zona WHERE isIndisponivel = 0 and eventoID_ev_zon = ?";
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setInt(1, idEvento);
-			try (ResultSet rs = stat.executeQuery()) {
-				while (rs.next()) {
-					if (BuyTicketDAO.getLugaresDisponiveis(idEvento, rs.getInt("zonaID")) > 0
-							&& rs.getBoolean("isIndisponivel") == false)
-						zonasDisponiveis.add(rs.getInt("zonaID"));
-					else
-						zonasDisponiveis.add(0);
-				}
+			ResultSet rs = stat.executeQuery();
+			while (rs.next()) {
+				zonasDisponiveis.add(rs.getInt("zonaID_ev_zon"));
 			}
 		} catch (SQLException e) {
 
@@ -101,7 +94,6 @@ public class BuyTicketDAO {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return -1;
@@ -116,28 +108,32 @@ public class BuyTicketDAO {
 	 * @return Lugares Disponíveis
 	 */
 
-	public static int getLugaresDisponiveis(int eventoID, int zonaID) {
+	public static ObservableList<Integer> getLugaresDisponiveis(int eventoID) {
 		Connection conn = DBConnector.getConnection();
-		int lugaresDisponiveis = 0;
-		String sql = "SELECT (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\r\n"
-				+ "				left join evento_zona ON zonaID_ev_zon = zonaID\r\n"
-				+ "				left join bilhete ON eventoZonaID = eventoZonaID_bilhete\r\n"
-				+ "				where eventoID_ev_zon = ? and zonaID_ev_zon = ?";
-		String sql2 = "select isIndisponivel from evento_zona where eventoID_ev_zon = ? and zonaID_ev_zon = ?";
-		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+		int contador = 0;
+		int zonaID = 0;
+		ObservableList<Integer> lugaresDisponiveis = FXCollections.observableArrayList();
+		String sql = "SELECT zonaID, (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\n"
+				+ "				left join evento_zona ON zonaID_ev_zon = zonaID\n"
+				+ "				left join bilhete ON eventoZonaID = eventoZonaID_bilhete\n"
+				+ "				where eventoID_ev_zon = ? and isIndisponivel = 0 group by zonaID_ev_zon;";
+		try (Statement st = conn.createStatement();
+				ResultSet rse = st.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")) {
+
+			PreparedStatement stat = conn.prepareStatement(sql);
 			stat.setInt(1, eventoID);
-			stat.setInt(2, zonaID);
 			ResultSet rs = stat.executeQuery();
 			while (rs.next()) {
-				lugaresDisponiveis = rs.getInt("lugares");
-			}
-			PreparedStatement stats = conn.prepareStatement(sql2);
-			stats.setInt(1, eventoID);
-			stats.setInt(2, zonaID);
-			ResultSet rs2 = stats.executeQuery();
-			while (rs2.next()) {
-				if (rs2.getInt("isIndisponivel") == 1)
-					lugaresDisponiveis = 0;
+				zonaID = rs.getInt("zonaID");
+				while ((zonaID - contador) > 1) {
+					lugaresDisponiveis.add(0);
+					contador++;
+				}
+				if ((zonaID - contador) <= 1) {
+					contador++;
+				}
+				lugaresDisponiveis.add(rs.getInt("lugares"));
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

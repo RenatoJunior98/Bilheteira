@@ -56,10 +56,8 @@ public class ViewEventsController {
 		idColumn.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getEventoID()));
 		nomeColumn.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getNome()));
 		diaColumn.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getDataHora()));
-		precoBaseColumn
-				.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getPrecoBase()));
-		lugaresDisponiveisColumn.setCellValueFactory(
-				cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getLugaresDisponiveis()));
+		precoBaseColumn.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getPrecoBase()));
+		lugaresDisponiveisColumn.setCellValueFactory(cellData -> new ReadOnlyObjectWrapper<>(cellData.getValue().getLugaresDisponiveis()));
 
 		eventosTV.setItems(EventListDAO.getEventsLists());
 
@@ -70,7 +68,5 @@ public class ViewEventsController {
 				e.printStackTrace();
 			}
 		});
-
 	}
-
 }

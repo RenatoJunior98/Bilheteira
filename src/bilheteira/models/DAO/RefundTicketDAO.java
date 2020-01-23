@@ -32,7 +32,6 @@ public class RefundTicketDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("erro no refund");
 		}
 	}
 
@@ -59,7 +58,6 @@ public class RefundTicketDAO {
 			return preco;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("erro no getPreco");
 		}
 		return 0;
 	}

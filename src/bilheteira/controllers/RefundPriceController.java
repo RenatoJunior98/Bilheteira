@@ -45,8 +45,6 @@ public class RefundPriceController {
 		BigDecimal bd = new BigDecimal(precoBilhete).setScale(2, RoundingMode.HALF_UP);
 		precoBilhete = bd.doubleValue();
 		sPreco = String.valueOf(precoBilhete);
-		System.out.println("------" + precoBilhete);
-		System.out.println(sPreco);
 		precoBilheteText.setText(sPreco);
 	}
 }

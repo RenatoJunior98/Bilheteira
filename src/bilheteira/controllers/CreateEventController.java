@@ -61,7 +61,6 @@ public class CreateEventController {
 			Main.getCurrentStage().close();
 			Main.createNewWindow("view/CreateEventZonas.fxml", new SelectZoneController());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

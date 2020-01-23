@@ -27,7 +27,6 @@ public class PasswordEventController {
 
 	public PasswordEventController(String janela) {
 		this.janela = janela;
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
