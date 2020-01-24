@@ -39,7 +39,8 @@ public class PasswordEventController {
 		try {
 			if (janela == "bilhete") {
 				if (password.getText().equals("123456") || password.getText().equals("1234")){
-				Main.createNewWindow("view/ViewEvents.fxml",
+					Main.getCurrentStage().close();
+					Main.createNewWindow("view/ViewEvents.fxml",
 						new ViewEventsController(BuyTicketDAO.getUserID(password.getText())));
 			}
 			}

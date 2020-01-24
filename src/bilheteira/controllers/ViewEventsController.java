@@ -63,6 +63,7 @@ public class ViewEventsController {
 
 		eventosTV.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
 			try {
+				Main.getCurrentStage().close();
 				Main.createNewWindow("view/BuyTicketWindow.fxml", new BuyTicketController(newVal, userID));
 			} catch (IOException e) {
 				e.printStackTrace();
