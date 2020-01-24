@@ -109,35 +109,43 @@ public class BuyTicketDAO {
 	 */
 
 	public static ObservableList<Integer> getLugaresDisponiveis(int eventoID) {
-		Connection conn = DBConnector.getConnection();
-		int contador = 0;
-		int zonaID = 0;
-		ObservableList<Integer> lugaresDisponiveis = FXCollections.observableArrayList();
-		String sql = "SELECT zonaID, (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\n"
-				+ "				left join evento_zona ON zonaID_ev_zon = zonaID\n"
-				+ "				left join bilhete ON eventoZonaID = eventoZonaID_bilhete\n"
-				+ "				where eventoID_ev_zon = ? and isIndisponivel = 0 group by zonaID_ev_zon;";
-		try (Statement st = conn.createStatement();
-				ResultSet rse = st.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")) {
+        Connection conn = DBConnector.getConnection();
+        int contador = 0;
+        int zonaID = 0;
+        int nZonas = 0;
+        ObservableList<Integer> lugaresDisponiveis = FXCollections.observableArrayList();
+        String sql = "SELECT zonaID, (lugaresTotalZona - count(codigoBilhete)) as 'lugares' from zona\n"
+                + "                left join evento_zona ON zonaID_ev_zon = zonaID\n"
+                + "                left join bilhete ON eventoZonaID = eventoZonaID_bilhete\n"
+                + "                where eventoID_ev_zon = ? and isIndisponivel = 0 group by zonaID_ev_zon;";
 
-			PreparedStatement stat = conn.prepareStatement(sql);
-			stat.setInt(1, eventoID);
-			ResultSet rs = stat.executeQuery();
-			while (rs.next()) {
-				zonaID = rs.getInt("zonaID");
-				while ((zonaID - contador) > 1) {
-					lugaresDisponiveis.add(0);
-					contador++;
-				}
-				if ((zonaID - contador) <= 1) {
-					contador++;
-				}
-				lugaresDisponiveis.add(rs.getInt("lugares"));
+        try (Statement st = conn.createStatement();
+                ResultSet rse = st.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")) {
+            PreparedStatement sts = conn.prepareStatement("select count(*) as 'nZonas' from zona");
+                ResultSet rss = sts.executeQuery();
+                if (rss.next())
+                nZonas = rss.getInt("nZonas");
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setInt(1, eventoID);
+            ResultSet rs = stat.executeQuery();
+            while (rs.next()) {
+                zonaID = rs.getInt("zonaID");
+                while ((zonaID - contador) > 1) {
+                    lugaresDisponiveis.add(0);
+                    contador++;
+                }
+                if ((zonaID - contador) <= 1) {
+                    contador++;
+                }
+                lugaresDisponiveis.add(rs.getInt("lugares"));
 
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return lugaresDisponiveis;
-	}
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        while (lugaresDisponiveis.size() < (nZonas)) {
+            lugaresDisponiveis.add(0);
+        }
+        return lugaresDisponiveis;
+    }
 }

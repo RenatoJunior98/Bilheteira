@@ -22,14 +22,12 @@ public final class EventListDAO {
 	private EventListDAO() {
 	}
 
-	static ObservableList<Integer> nZonas = FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
-			14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24);
+	static ObservableList<Integer> nZonas = FXCollections.observableArrayList();
 
 	/**
 	 * Metodo getEventsList obtem a partir da base de dados a lista de eventos e
-	 * guarda na ObservableList EventsList EventsList; 
-	 * Faz a conexão à base de dados a partir
-	 * do metodo getConnection da classe DBConnector
+	 * guarda na ObservableList EventsList EventsList; Faz a conexão à base de dados
+	 * a partir do metodo getConnection da classe DBConnector
 	 * 
 	 * @return a ObservableList EventsList com a lista de eventos guardados na base
 	 *         de dados
@@ -42,7 +40,6 @@ public final class EventListDAO {
 						.executeQuery("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")) {
 
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try (Statement stat = conn.createStatement();
@@ -83,9 +80,9 @@ public final class EventListDAO {
 	 * Recebe um evento para ser introduzido; Faz a conexão à base de dados a partir
 	 * do metodo getConnection da classe DBConnector
 	 * 
-	 * @param nome: nome do evento
+	 * @param nome:      nome do evento
 	 * @param precoBase: Preço base do evento (preço da zona mais barata)
-	 * @param dataHora: data e hora do evento
+	 * @param dataHora:  data e hora do evento
 	 */
 	public static void saveEvento(String nome, double precoBase, String dataHora) {
 		int eventID = 0;
@@ -124,41 +121,6 @@ public final class EventListDAO {
 		return -1;
 	}
 
-	public static String getEventoData(int eventoID) {
-		String sql = "select nome dia from evento where eventoID = ?";
-		Connection conn = DBConnector.getConnection();
-		try (PreparedStatement stat = conn.prepareStatement(sql)) {
-			stat.setInt(1, eventoID);
-			try (ResultSet rs = stat.executeQuery()) {
-				while (rs.next()) {
-					return rs.getString("dia");
-				}
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public static String getEventoNome(int eventoID) {
-		String sql = "select nome from evento where eventoID = ?";
-		String nome = null;
-		Connection conn = DBConnector.getConnection();
-		try (PreparedStatement stat = conn.prepareStatement(sql)) {
-			stat.setInt(1, eventoID);
-			try (ResultSet rs = stat.executeQuery()) {
-				while (rs.next()) {
-					nome = rs.getString("nome");
-				}
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return nome;
-	}
-
 	/**
 	 * Metodo saveEvento é dedicado a introduzir um novo evento na tabela EventoZona
 	 * na base de dados; Recebe um eventoID para criar elementos dessa tabela;
@@ -169,7 +131,13 @@ public final class EventListDAO {
 	public static void saveEventoZona(int eventoID) {
 		String slqEZ = "insert into evento_zona (eventoID_ev_zon, zonaID_ev_zon) values (?,?)";
 		Connection conn = DBConnector.getConnection();
-		try (java.sql.PreparedStatement stat = conn.prepareStatement(slqEZ)) {
+		try (PreparedStatement sts = conn.prepareStatement("select zonaID as 'Zonas' from zona");) {
+			ResultSet rss = sts.executeQuery();
+			while (rss.next()) {
+				nZonas.add(rss.getInt("Zonas"));
+			}
+
+			PreparedStatement stat = conn.prepareStatement(slqEZ);
 			for (int i : nZonas) {
 				stat.setInt(1, eventoID);
 				stat.setInt(2, i);
