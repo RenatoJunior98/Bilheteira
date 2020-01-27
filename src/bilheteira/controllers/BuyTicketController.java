@@ -26,7 +26,7 @@ public class BuyTicketController {
 	private ObservableList<Integer> NBilhetes = FXCollections.observableArrayList();
 	private ObservableList<Integer> lugaresDisponiveis = FXCollections.observableArrayList();
 	private ObservableList<Integer> codigosBilhetes = FXCollections.observableArrayList();
-	private int nBilhetesTotal = 15;
+	private int nBilhetesMax = 15;
 
 	@FXML
 	private ComboBox<Integer> nBilhetes;
@@ -75,11 +75,12 @@ public class BuyTicketController {
 
 	@FXML
 	private void confirmarZona() {
+		int zonaEscolhida = escolherZona.getValue();
 		lugaresDisponiveis = BuyTicketDAO.getLugaresDisponiveis(event.getEventoID());
 		NBilhetes.clear();
 		if (escolherZona.getSelectionModel().getSelectedItem() != null) {
-			if (lugaresDisponiveis.get(escolherZona.getValue() - 1) <= nBilhetesTotal) {
-				for (int i = 1; i <= escolherZona.getValue(); i++) {
+			if (lugaresDisponiveis.get(zonaEscolhida - 1) <= nBilhetesMax) {
+				for (int i = 1; i <= lugaresDisponiveis.get(zonaEscolhida - 1); i++) {
 					NBilhetes.add(i);
 				}
 			}
