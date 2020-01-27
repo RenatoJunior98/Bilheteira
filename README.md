@@ -37,5 +37,22 @@ Preços variados consoante as várias zonas.
 Troca de zona: Após a compra do seu bilhete, o utilizador ao escolher a opção de trocar de zona é lhe pedido o código gerado no ato da compra. Após submeter o código É criada uma janela com o valor a ser devolvido (preço do bilhete).
 
 Criação de eventos no estádio: um administrador escolhe a opção "criar evento" e é levado para uma janela onde é-lhe pedido uma password (previamente criada), se nao for introduzida a password correta é mostrada uma mensagem de erro, se acertar o administrador é levado para a janela onde é pedido o nome do evento, data e hora, preço base (o preço da zona mais barata, pelo qual são calculados os preços das restantes zonas) e por fim escolhe as zonas onde o administrador deseja desativar (para onde não vão ser vendidos bilhetes, pois pode estar atras de um palco), quando estiver tudo escolhido o administrador clica em "SUBMETER".
+
+## Manual de Instruções
+Comprar Bilhete: 
+Menu Principal > Comprar Bilhete > Inserir a password do utilizador e clicar “Enter” > Escolher e clicar no evento 
+> Escolher zona e clicar “Confirmar zona” > Escolher o numero de bilhetes pretendido e clicar “Comprar” 
+> Uma janela irá aparecer com o bilhete (os códigos dos bilhetes estarão presentes na caixa dentro do bilhete) e outra 
+com o preço total de todos os bilhetes comprados.
+
+Criar Evento:
+Menu Principal > Criação de Eventos > Inserir a password reservada a administradores (a password é a mesma para todos os funcionários)
+> Inserir os dados do evento e clicar “Continuar” > escolher as zonas indisponíveis do evento e clicar “Submit” 
+> Uma janela irá aparecer com a confirmação de que o evento foi criado com sucesso.
+
+Devolver Bilhete:
+Menu Principal > Devolução de Bilhetes > Inserir o código do bilhete e clicar “Confirmar”
+> Uma janela irá aparecer com o valor a devolver, para fazer a devolução de outro bilhete basta repetir o processo.
+
 ## Referências:
 QUEM SOMOS. Acedido em: 2, 10, 2019, em: https://ticketline.sapo.pt/pagina/quemsomos.
