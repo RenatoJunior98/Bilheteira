@@ -40,19 +40,19 @@ Criação de eventos no estádio: um administrador escolhe a opção "criar even
 
 ## Manual de Instruções
 Comprar Bilhete: 
-Menu Principal > Comprar Bilhete > Inserir a password do utilizador e clicar “Enter” > Escolher e clicar no evento 
-> Escolher zona e clicar “Confirmar zona” > Escolher o numero de bilhetes pretendido e clicar “Comprar” 
-> Uma janela irá aparecer com o bilhete (os códigos dos bilhetes estarão presentes na caixa dentro do bilhete) e outra 
+Menu Principal > Comprar Bilhete > Inserir a password do utilizador e clicar “Enter” > Escolher e clicar no evento >
+Escolher zona e clicar “Confirmar zona” > Escolher o numero de bilhetes pretendido e clicar “Comprar” >
+Uma janela irá aparecer com o bilhete (os códigos dos bilhetes estarão presentes na caixa dentro do bilhete) e outra 
 com o preço total de todos os bilhetes comprados.
 
 Criar Evento:
-Menu Principal > Criação de Eventos > Inserir a password reservada a administradores (a password é a mesma para todos os funcionários)
-> Inserir os dados do evento e clicar “Continuar” > escolher as zonas indisponíveis do evento e clicar “Submit” 
-> Uma janela irá aparecer com a confirmação de que o evento foi criado com sucesso.
+Menu Principal > Criação de Eventos > Inserir a password reservada a administradores (a password é a mesma para todos os funcionários) >
+Inserir os dados do evento e clicar “Continuar” > escolher as zonas indisponíveis do evento e clicar “Submit” >
+Uma janela irá aparecer com a confirmação de que o evento foi criado com sucesso.
 
 Devolver Bilhete:
-Menu Principal > Devolução de Bilhetes > Inserir o código do bilhete e clicar “Confirmar”
-> Uma janela irá aparecer com o valor a devolver, para fazer a devolução de outro bilhete basta repetir o processo.
+Menu Principal > Devolução de Bilhetes > Inserir o código do bilhete e clicar “Confirmar”>
+Uma janela irá aparecer com o valor a devolver, para fazer a devolução de outro bilhete basta repetir o processo.
 
 ## Referências:
 QUEM SOMOS. Acedido em: 2, 10, 2019, em: https://ticketline.sapo.pt/pagina/quemsomos.
